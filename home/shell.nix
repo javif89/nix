@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # Bash configuration
   programs.bash = {
     enable = true;
@@ -19,9 +20,10 @@
 
       # Convenience
       rp = "source ~/.bashrc";
+      co = "code .";
 
       # Nix
-      rb = "sudo nixos-rebuild switch --flake $HOME/nixos-config#default";
+      rb = "sudo nixos-rebuild switch --flake $HOME/nix#default";
 
       # Git shortcuts
       gs = "git status";

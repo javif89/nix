@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # Starship prompt configuration (equivalent to your starship-prompt.sh)
   programs.starship = {
     enable = true;

@@ -3,9 +3,9 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   services.xserver.enable = true;
-  services.displayManager.gdm.enable = true;
   services.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11

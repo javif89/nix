@@ -1,16 +1,15 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {
   config,
   pkgs,
   inputs,
   ...
-}: {
+}:
+{
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ./system/gnome.nix
+    ./system/nvidia.nix
+    ./system/de/gdm.nix
+    ./system/de/hypr/hyprland.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -49,6 +48,16 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Flatpak (Basically just for discord)
+  services.flatpak.enable = true;
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
+  };
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -72,7 +81,10 @@
   users.users.javi = {
     isNormalUser = true;
     description = "javi";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       #  thunderbird
     ];
@@ -94,10 +106,13 @@
 
   system.stateVersion = "25.05"; # Did you read the comment?
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   home-manager = {
-    extraSpecialArgs = {inherit inputs;};
+    extraSpecialArgs = { inherit inputs; };
     users = {
       "javi" = import ./home.nix;
     };

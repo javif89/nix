@@ -2,13 +2,15 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     ./home/kitty.nix
     ./home/shell.nix
     ./home/starship.nix
-    ./home/gnome.nix
     ./home/git.nix
+    ./home/hyprland.nix
+    ./home/util/darkmode.nix
   ];
   nixpkgs.config.allowUnfree = true;
   # Home Manager needs a bit of information about you and the paths it should
@@ -29,8 +31,8 @@
   # environment.
   home.packages = with pkgs; [
     # Basics
-    kitty
     starship
+    nautilus
 
     # Terminal tools
     yazi
@@ -38,12 +40,13 @@
     fzf
     bat
     eza
+    jq
 
     # Dev tools
     jetbrains.datagrip
     vscode
     neovim
-    alejandra # Nix formatting
+    nixfmt # Nix formatting
 
     # System tools
     btop
@@ -55,44 +58,47 @@
 
     # Media
     mpc
-
-    # Apps
-    discord
   ];
 
-  # Home Manager is pretty good at managing dotfiles. The primary way to manage
-  # plain files is through 'home.file'.
-  home.file = {
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+  # Environment variables
+  home.sessionVariables = {
+    EDITOR = "code";
+    BROWSER = "brave";
+    TERMINAL = "kitty";
   };
 
-  # Home Manager can also manage your environment variables through
-  # 'home.sessionVariables'. These will be explicitly sourced when using a
-  # shell provided by Home Manager. If you don't want to manage your shell
-  # through Home Manager then you have to manually source 'hm-session-vars.sh'
-  # located at either
-  #
-  #  ~/.nix-profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  ~/.local/state/nix/profiles/profile/etc/profile.d/hm-session-vars.sh
-  #
-  # or
-  #
-  #  /etc/profiles/per-user/javi/etc/profile.d/hm-session-vars.sh
-  #
-  home.sessionVariables = {
-    # EDITOR = "emacs";
+  # File associations
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "brave-browser.desktop";
+      "x-scheme-handler/http" = "brave-browser.desktop";
+      "x-scheme-handler/https" = "brave-browser.desktop";
+      "x-scheme-handler/about" = "brave-browser.desktop";
+      "x-scheme-handler/unknown" = "brave-browser.desktop";
+      "application/pdf" = "org.gnome.Evince.desktop";
+      "text/plain" = "code.desktop";
+      "application/json" = "code.desktop";
+      "application/javascript" = "code.desktop";
+      "text/x-php" = "code.desktop";
+    };
+  };
+
+  # XDG directories
+  xdg = {
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
+      desktop = "${config.home.homeDirectory}/Desktop";
+      documents = "${config.home.homeDirectory}/Documents";
+      download = "${config.home.homeDirectory}/Downloads";
+      music = "${config.home.homeDirectory}/Music";
+      pictures = "${config.home.homeDirectory}/Pictures";
+      videos = "${config.home.homeDirectory}/Videos";
+      templates = "${config.home.homeDirectory}/Templates";
+      publicShare = "${config.home.homeDirectory}/Public";
+    };
   };
 
   # Let Home Manager install and manage itself.

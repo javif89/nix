@@ -2,7 +2,8 @@
   config,
   pkgs,
   ...
-}: {
+}:
+{
   # Development-specific configurations and tools
 
   # Node.js development
@@ -84,22 +85,22 @@
     keymap = {
       manager.prepend_keymap = [
         {
-          on = ["<Esc>"];
+          on = [ "<Esc>" ];
           run = "escape";
           desc = "Exit visual mode, clear selected, or cancel search";
         }
         {
-          on = ["q"];
+          on = [ "q" ];
           run = "quit";
           desc = "Exit the process";
         }
         {
-          on = ["Q"];
+          on = [ "Q" ];
           run = "quit --no-cwd-file";
           desc = "Exit the process without writing cwd-file";
         }
         {
-          on = ["<C-q>"];
+          on = [ "<C-q>" ];
           run = "close";
           desc = "Close the current tab, or quit if it is last tab";
         }

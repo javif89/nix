@@ -3,7 +3,8 @@
   lib,
   pkgs,
   ...
-}: let
+}:
+let
   kittyConfig = ''
     include current-theme.conf
 
@@ -16,16 +17,15 @@
 
     map ctrl+shift+t new_tab_with_cwd
   '';
-in {
+in
+{
+  home.packages = with pkgs; [
+    kitty
+  ];
+
   programs.kitty = {
     enable = true;
 
     extraConfig = kittyConfig;
-
-    # Optional: link extra files like `current-theme.conf`
-    # Add this if you have a custom theme file
-    # settings = {
-    #   include = "~/.config/kitty/current-theme.conf";
-    # };
   };
 }
