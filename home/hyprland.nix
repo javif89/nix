@@ -74,9 +74,7 @@
       inactive_opacity = 1.0;
     };
 
-    exec-once = [
-      "eval $(gnome-keyring-daemon --start --components=secrets,ssh,gpg)"
-    ];
+    exec-once = [ ];
   };
 
   wayland.windowManager.hyprland.plugins = [

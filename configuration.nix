@@ -114,8 +114,6 @@
     extraConfig = "
       Host myhost
         Hostname gitgud.foo 
-        Port 22
-        User javi
     ";
   };
 
