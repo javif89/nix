@@ -10,7 +10,7 @@ let
 
     font_size 16.0
 
-    background_opacity 0.9
+    background_opacity 0.7
     background_blur 1
 
     hide_window_decorations yes

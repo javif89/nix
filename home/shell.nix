@@ -13,9 +13,7 @@
     shellAliases = {
       sudo = "sudo ";
       # Better ls with eza
-      ls = "eza";
-      ll = "eza -la";
-      la = "eza -la";
+      ls = "eza -lg --group-directories-first --icons";
       tree = "eza --tree";
 
       # Convenience

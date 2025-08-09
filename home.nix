@@ -6,6 +6,7 @@
 {
   imports = [
     ./home/kitty.nix
+    ./home/ssh.nix
     ./home/shell.nix
     ./home/starship.nix
     ./home/git.nix
@@ -52,9 +53,13 @@
     btop
     fastfetch
 
+    # Langs
+    php
+    go
+    nodejs_22
+    bun
+
     # Util
-    xclip
-    flameshot
 
     # Media
     mpc
