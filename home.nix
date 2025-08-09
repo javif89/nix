@@ -6,7 +6,6 @@
 {
   imports = [
     ./home/kitty.nix
-    ./home/ssh.nix
     ./home/shell.nix
     ./home/starship.nix
     ./home/git.nix
@@ -58,8 +57,6 @@
     go
     nodejs_22
     bun
-
-    # Util
 
     # Media
     mpc

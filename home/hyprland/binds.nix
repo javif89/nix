@@ -51,6 +51,7 @@
       "$mod, SPACE, exec, wofi --show drun"
 
       "$mod SHIFT, s, togglespecialworkspace, comms"
+      "$mod SHIFT, a, togglespecialworkspace, research"
       "$mod SHIFT ALT, x, exec, hyprctl dispatch exit"
       "SHIFT, Print, exec, grimblast copy area"
       "CTRL, Print, exec, grimblast copy active"

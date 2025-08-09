@@ -102,7 +102,22 @@
     brave
     neovim
     git
+    openssh
   ];
+
+  services.openssh = {
+    enable = true;
+  };
+
+  programs.ssh = {
+    startAgent = true;
+    extraConfig = "
+      Host myhost
+        Hostname gitgud.foo 
+        Port 22
+        User javi
+    ";
+  };
 
   system.stateVersion = "25.05"; # Did you read the comment?
 

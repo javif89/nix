@@ -51,8 +51,6 @@
 
     # Additional bash configuration
     bashrcExtra = ''
-      # Custom functions
-
       # Project selector function (equivalent to your custom keybinding)
       proj() {
         if [ -d "$HOME/projects" ]; then
