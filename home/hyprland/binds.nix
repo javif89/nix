@@ -50,8 +50,8 @@
 
       "$mod, f, fullscreen, 0"
       "$mod, v, togglefloating, active"
-      # "$mod, SPACE, exec, wofi --show drun"
-      "$mod, SPACE, exec, walker"
+      "$mod, SPACE, exec, wofi --show drun"
+      "$mod, d, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji"
 
       "$mod SHIFT, s, exec, hyprshot --mode region"
       ", PRINT, exec, hyprshot --mode output"
