@@ -60,6 +60,7 @@
     # Langs
     php
     php84Packages.composer
+    laravel
     go
     nodejs_22
     bun
