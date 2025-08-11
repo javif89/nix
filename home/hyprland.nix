@@ -6,18 +6,30 @@
 }:
 
 {
-  home.packages = [
-    pkgs.wofi
-    # pkgs.hyprlock
-    pkgs.mako
-    pkgs.libnotify
-  ];
-
   imports = [
     # Configs
     ./hyprland/binds.nix
     # Ecosystem
     ./hyprland/hyprpaper.nix
+    # Desktop environment
+    ./hyprland/hyprpanel.nix
+  ];
+
+  home.packages = with pkgs; [
+    # Running apps
+    wofi
+
+    # Notifications
+    libnotify
+
+    # Screenshots
+    grim
+    slurp
+    wl-clipboard
+    hyprshot
+
+    # Desktop env
+    hyprpanel
   ];
 
   # Important for certain apps working
@@ -33,11 +45,11 @@
   wayland.windowManager.hyprland.enable = true;
 
   wayland.windowManager.hyprland.settings = {
-    "$mod" = "SUPER";
-    "$browser" = "brave";
-    "$terminal" = "kitty";
-    "$file_browser" = "nautilus";
-    "$webapp" = "$browser --new-window --app=";
+    input = {
+      repeat_delay = 200;
+      repeat_rate = 20;
+      follow_mouse = 0;
+    };
 
     monitor = [
       "DP-5, 3440x1440@179.99, 0x0, 1"
@@ -45,17 +57,17 @@
 
     general = {
       layout = "master";
-      gaps_out = 10;
-      gaps_in = 10;
+      gaps_out = 0;
+      gaps_in = 0;
     };
 
     workspace = [
-      1
-      2
-      3
-      4
-      5
-      6
+      "1, persistent:true"
+      "2, persistent:true"
+      "3, persistent:true"
+      "4, persistent:true"
+      "5, persistent:true"
+      "6, persistent:true"
     ];
 
     # Window rules
@@ -74,7 +86,10 @@
       inactive_opacity = 1.0;
     };
 
-    exec-once = [ ];
+    exec-once = [
+      # "quickshell -c hyprshell"
+      "hyprpanel"
+    ];
   };
 
   wayland.windowManager.hyprland.plugins = [

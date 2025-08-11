@@ -10,6 +10,8 @@
     ./system/nvidia.nix
     ./system/de/gdm.nix
     ./system/de/hypr/hyprland.nix
+    ./system/nfs.nix
+    ./system/fonts.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -85,9 +87,6 @@
       "networkmanager"
       "wheel"
     ];
-    packages = with pkgs; [
-      #  thunderbird
-    ];
   };
 
   # Install firefox.
@@ -103,6 +102,8 @@
     neovim
     git
     openssh
+    pkgs.ntfs3g
+    xdg-user-dirs-gtk # This helps with Nautilus integration
   ];
 
   services.openssh = {
@@ -124,10 +125,42 @@
     "flakes"
   ];
 
+  # Mount my second drive
+  boot.supportedFilesystems = [ "ntfs" ];
+  fileSystems."/mnt/working-files" = {
+    device = "/dev/disk/by-uuid/BE8EBBDA8EBB8A03";
+    fsType = "ntfs";
+    options = [
+      "uid=1000" # your user ID (check with `id -u`)
+      "gid=100" # your primary group ID (check with `id -g`)
+      "dmask=022" # dir permissions
+      "fmask=133" # file permissions
+      "nofail"
+
+      # make Nautilus show it with a friendly name/icon
+      "x-gvfs-show"
+      "x-gvfs-name=Working Files"
+    ];
+  };
+
+  # Theme
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+    # image = "/home/javi/Documents/wallpapers/Fantasy-Mountain.png";
+    polarity = "dark";
+  };
+
+  # Enable home manager
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "javi" = import ./home.nix;
+      "javi" = {
+        imports = [
+          inputs.hyprshell.homeManagerModules.default
+          ./home.nix
+        ];
+      };
     };
   };
 }

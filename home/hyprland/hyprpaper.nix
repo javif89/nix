@@ -5,6 +5,10 @@
   ...
 }:
 
+let
+  basePath = "/home/javi/Documents/wallpapers";
+  wallpaper = "Fantasy-Mountain.png";
+in
 {
   home.packages = [
     pkgs.hyprpaper
@@ -15,11 +19,11 @@
       ipc = "on";
       splash = false;
       preload = [
-        "/home/javi/Documents/wallpapers/Fantasy-Landscape2.png"
+        "${basePath}/${wallpaper}"
       ];
 
       wallpaper = [
-        ", /home/javi/Documents/wallpapers/Fantasy-Landscape2.png"
+        ", ${basePath}/${wallpaper}"
       ];
     };
   };

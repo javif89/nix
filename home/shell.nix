@@ -12,74 +12,121 @@
     # Shell aliases (equivalent to your script functions)
     shellAliases = {
       sudo = "sudo ";
-      # Better ls with eza
-      ls = "eza -lg --group-directories-first --icons";
-      tree = "eza --tree";
-
-      # Convenience
-      rp = "source ~/.bashrc";
-      co = "code .";
-
       # Nix
-      rb = "sudo nixos-rebuild switch --flake $HOME/nix#default";
+      rb = "git add . && sudo nixos-rebuild switch --flake $HOME/nix#default";
 
-      # Git shortcuts
-      gs = "git status";
-      ga = "git add";
-      gc = "git commit";
-      gp = "git push";
-      gl = "git pull";
-      gco = "git checkout";
-      gb = "git branch";
-      gd = "git diff";
-      glog = "git log --oneline --graph";
+      eza = "eza";
+      ls = "eza -lh --group-directories-first --icons";
+      cat = "bat";
+      bat = "bat";
 
-      # Directory navigation
+      # Quicker navigation
       ".." = "cd ..";
       "..." = "cd ../..";
       "...." = "cd ../../..";
+      "....." = "cd ../../../..";
 
-      # Development
+      # Git
+      gs = "git status";
+      ga = "git add -A";
+      gc = "git commit -m";
+      grm = "git rm $(git ls-files --deleted)";
+      gb = "git checkout -b";
+
+      # Docker aliases
+      dc = "docker-compose";
+      bx = "docker buildx";
+      de = "docker exec -it";
+      dub = "docker compose up -d --build";
+      dup = "docker-compose up";
+      dwn = "docker-compose down";
+      da = "docker_artisan";
+
+      # Laravel & php
       a = "php artisan";
 
-      # System
-      grep = "rg";
+      # Convenience
+      cls = "clear";
+      home = "cd ~";
+      projects = "cd ~/projects";
+      co = "code .";
+      clipboard = "xclip -selection clipboard";
 
-      # System monitoring
-      top = "btop";
+      # Jigsaw
+      jig = "vendor/bin/jigsaw";
+
+      # Golang
+      gr = "go run .";
+      gmt = "go mod tidy";
+
     };
 
     # Additional bash configuration
     bashrcExtra = ''
-      # Project selector function (equivalent to your custom keybinding)
-      proj() {
-        if [ -d "$HOME/projects" ]; then
-          cd "$HOME/projects"
-          if command -v eza > /dev/null 2>&1; then
-            eza -la
-          else
-            ls -la
-          fi
-        else
-          echo "Projects directory not found"
-        fi
+        function pape() {
+          hyprctl hyprpaper preload $1 
+          hyprctl hyprpaper wallpaper ", $1"
+        }
+        # Open something in the projects folder
+        function o() {
+          cd "$HOME/projects/$1"
+        }
+
+        function proj() {
+          eza -ld $HOME/projects/* --color=never |
+            awk '{print $7}' |
+            fzf --reverse | xargs -I{} code {} -n && exit
+        }
+
+        function makepasswd() {
+          openssl rand -base64 16 | clipboard
+          echo "Password copied to clipboard"
+        }
+
+        function mountnewshares() {
+          sudo systemctl daemon-reload
+          sudo mount -a
+        }
+
+        function makerole() {
+          mkdir -p "roles/$1/tasks"
+          mkdir -p "roles/$1/defaults"
+          touch "roles/$1/tasks/main.yml"
+          touch "roles/$1/defaults/main.yml"
+        }
+
+        function pyvenv() {
+          python3 -m venv .venv
+          source .venv/bin/activate
+        }
+
+        function newsshkey() {
+          KEY_NAME="id_ed25519_$1"
+          KEY_PATH="$HOME/.ssh/$KEY_NAME"
+          ssh-keygen -t ed25519 -C "$1" -f "$KEY_PATH" -N ""
+          ssh-add "$KEY_PATH"
+          echo "Key created and added"
+          echo "Key: $KEY_NAME"
+          echo "Saved to: $KEY_PATH"
+        }
+
+        function listsshkeys() {
+          ls "$HOME/.ssh"
+        }
+
+        function copypublickey() {
+          KEY_NAME="$1"
+          KEY_PATH="$HOME/.ssh/$KEY_NAME"
+          cat "$KEY_PATH.pub" | clipboard
+          echo "Key copied to clipboard"
+        }
+
+      function makerole() {
+      	mkdir -p "roles/$1/tasks"
+      	mkdir -p "roles/$1/defaults"
+      	touch "roles/$1/tasks/main.yml"
+      	touch "roles/$1/defaults/main.yml"
       }
-
-      # Make directory and cd into it
-      mkcd() {
-        mkdir -p "$1" && cd "$1"
-      }
-
-
-      # Better completion
-      bind "set completion-ignore-case on"
-      bind "set show-all-if-ambiguous on"
-      bind "set show-all-if-unmodified on"
-
-      # Enable color support
-      if [ -x /usr/bin/dircolors ]; then
-        test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-      fi
     '';
   };
 }

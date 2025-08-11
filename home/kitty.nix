@@ -6,8 +6,6 @@
 }:
 let
   kittyConfig = ''
-    include current-theme.conf
-
     font_size 16.0
 
     background_opacity 0.7

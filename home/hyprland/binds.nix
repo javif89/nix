@@ -28,7 +28,9 @@
       "$mod SHIFT, o, exec, $browser"
       "$mod SHIFT, p, exec, $browser --incognito"
       "$mod, e, exec, $file_browser"
-      "$mod SHIFT, n, exec, kitty --start-as=normal -- bash -ic 'code ~/nix && exit'"
+      "$mod SHIFT, n, exec, $terminal --start-as=normal -- bash -ic 'code ~/nix && exit'"
+      "$mod SHIFT, ESC, exec, $terminal --start-as=normal -- bash -ic 'btop'"
+      "$mod ALT, p, exec, $terminal --start-as=normal -- bash -ic 'proj'"
       "$mod, RETURN, exec, $webapphttps://chatgpt.com"
 
       # Window and workspace navigation
@@ -50,7 +52,10 @@
       "$mod, v, togglefloating, active"
       "$mod, SPACE, exec, wofi --show drun"
 
-      "$mod SHIFT, s, togglespecialworkspace, comms"
+      "$mod SHIFT, s, exec, hyprshot --mode region"
+      ", PRINT, exec, hyprshot --mode output"
+
+      "$mod SHIFT, c, togglespecialworkspace, comms"
       "$mod SHIFT, a, togglespecialworkspace, research"
       "$mod SHIFT ALT, x, exec, hyprctl dispatch exit"
       "SHIFT, Print, exec, grimblast copy area"
