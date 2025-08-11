@@ -50,7 +50,8 @@
 
       "$mod, f, fullscreen, 0"
       "$mod, v, togglefloating, active"
-      "$mod, SPACE, exec, wofi --show drun"
+      # "$mod, SPACE, exec, wofi --show drun"
+      "$mod, SPACE, exec, walker"
 
       "$mod SHIFT, s, exec, hyprshot --mode region"
       ", PRINT, exec, hyprshot --mode output"
