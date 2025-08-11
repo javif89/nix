@@ -30,7 +30,9 @@
       "$mod, e, exec, $file_browser"
       "$mod SHIFT, n, exec, $terminal --start-as=normal -- bash -ic 'code ~/nix && exit'"
       "$mod SHIFT, ESC, exec, $terminal --start-as=normal -- bash -ic 'btop'"
-      "$mod ALT, p, exec, $terminal --start-as=normal -- bash -ic 'proj'"
+      # "$mod ALT, p, exec, $terminal --start-as=normal -- bash -ic 'proj'"
+
+      "$mod ALT, p, exec, eza -ld $HOME/projects/* --color=never | awk '{print $7}' | wofi --dmenu --prompt \"Open project:\" | xargs -I{} code {} -n && exit"
       "$mod, RETURN, exec, $webapphttps://chatgpt.com"
 
       # Window and workspace navigation

@@ -75,7 +75,7 @@
         function proj() {
           eza -ld $HOME/projects/* --color=never |
             awk '{print $7}' |
-            fzf --reverse | xargs -I{} code {} -n && exit
+            wofi --dmenu --prompt "Open project:" | xargs -I{} code {} -n && exit
         }
 
         function makepasswd() {
