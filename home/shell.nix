@@ -4,10 +4,11 @@
   ...
 }:
 {
-  # Bash configuration
-  programs.bash = {
+  programs.zsh = {
     enable = true;
     enableCompletion = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     # Shell aliases (equivalent to your script functions)
     shellAliases = {
@@ -62,7 +63,7 @@
     };
 
     # Additional bash configuration
-    bashrcExtra = ''
+    initContent = ''
         function pape() {
           hyprctl hyprpaper preload $1 
           hyprctl hyprpaper wallpaper ", $1"

@@ -14,6 +14,7 @@
     # Desktop environment
     ./hyprland/hyprpanel.nix
     ./wofi.nix
+    ./hyprland/desktop-env.nix
   ];
 
   home.packages = with pkgs; [

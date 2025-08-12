@@ -4,10 +4,15 @@
   ...
 }:
 {
+  home.packages = with pkgs; [
+    starship
+  ];
+
   # Starship prompt configuration (equivalent to your starship-prompt.sh)
   programs.starship = {
     enable = true;
     enableBashIntegration = true;
+    enableZshIntegration = true;
 
     # settings = {
     #   # Main prompt format

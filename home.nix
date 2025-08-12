@@ -33,8 +33,6 @@
   # environment.
   home.packages = with pkgs; [
     # Basics
-    starship
-    nautilus
     quickshell
 
     # Terminal tools
@@ -64,9 +62,6 @@
     go
     nodejs_22
     bun
-
-    # Media
-    mpc
   ];
 
   programs.btop = {
@@ -112,6 +107,7 @@
 
   # Configure all the xdg stuff so apps work correctly
   xdg = {
+    enable = true;
     # Normal expected directories
     userDirs = {
       enable = true;
@@ -126,23 +122,23 @@
       videos = "${config.home.homeDirectory}/Videos";
     };
 
-    # File/app associations
-
-    mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "text/html" = "brave-browser.desktop";
-        "x-scheme-handler/http" = "brave-browser.desktop";
-        "x-scheme-handler/https" = "brave-browser.desktop";
-        "x-scheme-handler/about" = "brave-browser.desktop";
-        "x-scheme-handler/unknown" = "brave-browser.desktop";
-        "application/pdf" = "org.gnome.Evince.desktop";
-        "text/plain" = "code.desktop";
-        "application/json" = "code.desktop";
-        "application/javascript" = "code.desktop";
-        "text/x-php" = "code.desktop";
-      };
-    };
+    # TODO: Move the http handler to a browser.nix
+    #   # File/app associations
+    #   mimeApps = {
+    #     enable = true;
+    #     defaultApplications = {
+    #       "text/html" = "brave.desktop";
+    #       "x-scheme-handler/http" = "brave.desktop";
+    #       "x-scheme-handler/https" = "brave.desktop";
+    #       "x-scheme-handler/about" = "brave.desktop";
+    #       "x-scheme-handler/unknown" = "brave.desktop";
+    #       "application/pdf" = "org.gnome.Evince.desktop";
+    #       "text/plain" = "code.desktop";
+    #       "application/json" = "code.desktop";
+    #       "application/javascript" = "code.desktop";
+    #       "text/x-php" = "code.desktop";
+    #     };
+    #   };
   };
 
   # Let Home Manager install and manage itself.

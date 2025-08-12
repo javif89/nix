@@ -10,7 +10,7 @@
     "$mod" = "SUPER";
     "$browser" = "brave";
     "$terminal" = "kitty";
-    "$file_browser" = "nautilus";
+    "$file_browser" = "thunar";
     "$webapp" = "$browser --new-window --app=";
 
     binds = {

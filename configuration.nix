@@ -83,15 +83,13 @@
   users.users.javi = {
     isNormalUser = true;
     description = "javi";
+    shell = pkgs.zsh;
+    useDefaultShell = true;
     extraGroups = [
       "networkmanager"
       "wheel"
     ];
   };
-
-  # Install firefox.
-  programs.firefox.enable = true;
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -160,6 +158,9 @@
     # image = "/home/javi/Documents/wallpapers/Fantasy-Mountain.png";
     polarity = "dark";
   };
+
+  # Enable zshell
+  programs.zsh.enable = true;
 
   # Enable home manager
   home-manager = {
