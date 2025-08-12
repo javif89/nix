@@ -126,6 +126,11 @@
     ";
   };
 
+  # More thunar support
+  programs.xfconf = {
+    enable = true;
+  };
+
   system.stateVersion = "25.05"; # Did you read the comment?
 
   nix.settings.experimental-features = [
