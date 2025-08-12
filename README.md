@@ -1,5 +1,7 @@
 # My NixOS Configuration
 
+![screenshot](screenshot.png)
+
 ## Base
 - NixOs
 - Home Manager as a NixOS module
