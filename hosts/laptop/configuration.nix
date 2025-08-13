@@ -2,26 +2,20 @@
   config,
   pkgs,
   inputs,
+  hostname,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
-    ./system/nvidia.nix
-    # ./system/de/gdm.nix
-    ./system/de/sddm.nix
-    ./system/de/hypr/hyprland.nix
-    ./system/nfs.nix
-    ./system/fonts.nix
-    inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = hostname;
+  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

@@ -14,7 +14,7 @@
     shellAliases = {
       sudo = "sudo ";
       # Nix
-      rb = "git add . && sudo nixos-rebuild switch --flake $HOME/nix#default";
+      rb = "git add . && sudo nixos-rebuild switch --flake $HOME/nix#desktop";
 
       eza = "eza";
       ls = "eza -lh --group-directories-first --icons";

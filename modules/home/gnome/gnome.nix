@@ -9,6 +9,8 @@
     ./gnome/keybinds.nix
   ];
 
+  window
+
   home.packages = with pkgs; [
     gnomeExtensions.blur-my-shell
     gnomeExtensions.dash-to-dock

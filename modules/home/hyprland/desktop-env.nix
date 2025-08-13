@@ -98,8 +98,12 @@
       "application/x-rar" = "org.kde.ark.desktop";
 
       # Directory
-      "inode/directory" = "org.kde.dolphin.desktop";
+      "inode/directory" = "thunar.desktop";
     };
+  };
+
+  home.sessionVariables = {
+    FILE_MANAGER = "thunar";
   };
 
   # Configure specific programs

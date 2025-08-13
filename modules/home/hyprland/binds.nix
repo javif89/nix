@@ -33,7 +33,7 @@
       # "$mod ALT, p, exec, $terminal --start-as=normal -- bash -ic 'proj'"
 
       "$mod ALT, p, exec, eza -ld $HOME/projects/* --color=never | awk '{print $7}' | wofi --dmenu --prompt \"Open project:\" | xargs -I{} code {} -n && exit"
-      "$mod, RETURN, exec, $webapphttps://chatgpt.com"
+      "$mod, RETURN, exec, $webapphttps://claude.ai"
 
       # Window and workspace navigation
       # Move between windows with vim keys

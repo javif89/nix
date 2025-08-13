@@ -33,7 +33,16 @@ let
 
 in
 {
-  services.gvfs.enable = true;
-  services.udisks2.enable = true;
+  # Enable NFS client support
+  boot.supportedFilesystems = [ "nfs" ];
+  services = {
+    rpcbind.enable = true; # Required for NFS
+    gvfs.enable = true;
+    udisks2.enable = true;
+  };
+
   fileSystems = fsConfig;
+
+  # # Optional: Create mount directories
+  # systemd.tmpfiles.rules = map (share: "d /mnt/${share} 0755 root root -") shares;
 }

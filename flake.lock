@@ -316,6 +316,18 @@
         "url": "https://gitgud.foo/thegrind/hypr-shell.git"
       }
     },
+    "my-assets": {
+      "flake": false,
+      "locked": {
+        "path": "./assets",
+        "type": "path"
+      },
+      "original": {
+        "path": "./assets",
+        "type": "path"
+      },
+      "parent": []
+    },
     "neovim-nightly-overlay": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -433,6 +445,7 @@
       "inputs": {
         "home-manager": "home-manager",
         "hyprshell": "hyprshell",
+        "my-assets": "my-assets",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixpkgs": "nixpkgs_3",
         "stylix": "stylix"
