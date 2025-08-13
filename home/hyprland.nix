@@ -32,6 +32,9 @@
 
     # Desktop env
     hyprpanel
+
+    # Utility
+    wl-clipboard
   ];
 
   # Important for certain apps working

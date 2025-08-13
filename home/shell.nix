@@ -51,7 +51,7 @@
       home = "cd ~";
       projects = "cd ~/projects";
       co = "code .";
-      clipboard = "xclip -selection clipboard";
+      clipboard = "wl-copy";
 
       # Jigsaw
       jig = "vendor/bin/jigsaw";

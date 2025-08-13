@@ -8,7 +8,8 @@
   imports = [
     ./hardware-configuration.nix
     ./system/nvidia.nix
-    ./system/de/gdm.nix
+    # ./system/de/gdm.nix
+    ./system/de/sddm.nix
     ./system/de/hypr/hyprland.nix
     ./system/nfs.nix
     ./system/fonts.nix
@@ -90,6 +91,13 @@
       "wheel"
     ];
   };
+  # Set up my user icon
+  environment.etc."avatars/javi.png".source = ./assets/user-icon.png;
+  system.activationScripts.avatar = ''
+    mkdir -p /var/lib/AccountsService/icons
+    ln -sf /etc/avatars/javi.png /var/lib/AccountsService/icons/javi
+  '';
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -97,7 +105,6 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     brave
-    neovim
     git
     openssh
     pkgs.ntfs3g

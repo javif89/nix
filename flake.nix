@@ -12,6 +12,7 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs =
@@ -23,6 +24,9 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
+      overlays = [
+        inputs.neovim-nightly-overlay.overlays.default
+      ];
     in
     {
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {

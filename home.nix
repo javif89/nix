@@ -13,6 +13,7 @@
     ./home/git.nix
     ./home/hyprland.nix
     ./home/util/darkmode.nix
+    ./home/neovim.nix
   ];
   nixpkgs.config.allowUnfree = true;
   # Home Manager needs a bit of information about you and the paths it should
@@ -46,7 +47,6 @@
     # Dev tools
     jetbrains.datagrip
     vscode
-    neovim
     nixfmt # Nix formatting
     pkgs.libsForQt5.full # QML formatting (for working on quickshell)
 
