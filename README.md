@@ -6,6 +6,7 @@ My modular NixOS configuration with Home Manager integration.
 
 ## Structure
 
+```
 | nix /
 |-flake.nix (Where everything starts)
 |-assets/ (profile pic, sddm background, etc)
@@ -13,6 +14,7 @@ My modular NixOS configuration with Home Manager integration.
 |-modules/ (Pieces I want to be able to switch in and out)
 |--system/ (System level configs like bootloader, GPU drivers)
 |--home/ (Most of the juice is here. Managed by home manager. Program configs and such)
+```
 
 ## Base setup
 
