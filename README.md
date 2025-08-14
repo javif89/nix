@@ -19,7 +19,9 @@ My modular NixOS configuration with Home Manager integration.
 ## Base setup
 
 **OS:** NixOS
+
 **Display Manager:** SDDM with the [Chili Theme](https://github.com/MarianArlt/sddm-chili) and a custom wallpaper to match my theme.
+
 **Window Manager:** HyprLand
 
 ### Desktop Environment
