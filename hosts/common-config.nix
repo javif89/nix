@@ -175,7 +175,10 @@
 
   # Enable home manager
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {
+      inherit inputs;
+      assets = assets;
+    };
     users = {
       "javi" = {
         imports = [

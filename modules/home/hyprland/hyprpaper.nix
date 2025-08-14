@@ -2,28 +2,27 @@
   config,
   pkgs,
   inputs,
+  assets,
   ...
 }:
 
-let
-  basePath = "/home/javi/Documents/wallpapers";
-  wallpaper = "Fantasy-Mountain.png";
-in
 {
   home.packages = [
     pkgs.hyprpaper
   ];
+  # Home Manager
+  xdg.configFile."wallpaper.png".source = "${assets}/wallpaper.png";
   services.hyprpaper = {
     enable = true;
     settings = {
       ipc = "on";
       splash = false;
       preload = [
-        "${basePath}/${wallpaper}"
+        "/home/javi/.config/wallpaper.png"
       ];
 
       wallpaper = [
-        ", ${basePath}/${wallpaper}"
+        ", /home/javi/.config/wallpaper.png"
       ];
     };
   };
