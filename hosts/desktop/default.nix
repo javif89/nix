@@ -16,6 +16,7 @@
   boot.supportedFilesystems = [
     "ntfs"
   ];
+
   fileSystems."/mnt/working-files" = {
     device = "/dev/disk/by-uuid/BE8EBBDA8EBB8A03";
     fsType = "ntfs";
