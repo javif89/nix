@@ -15,6 +15,7 @@
       sudo = "sudo ";
       # Nix
       rb = "git add . && sudo nixos-rebuild switch --flake $HOME/nix#desktop";
+      rbl = "git add . && sudo nixos-rebuild switch --flake $HOME/nix#laptop";
 
       eza = "eza";
       ls = "eza -lh --group-directories-first --icons";
