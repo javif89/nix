@@ -52,6 +52,11 @@
     # onlyoffice-bin  # Alternative office suite
   ];
 
+  xdg.configFile."Thunar/thunarrc".text = ''
+    [Configuration]
+    DefaultView=ThunarDetailsView
+  '';
+
   # XDG MIME associations for seamless integration
   xdg.mimeApps = {
     enable = true;

@@ -91,7 +91,14 @@
   };
 
   xdg = {
-    # Normal expected directories
+    enable = true;
+    configFile."user-dirs.conf" = {
+      text = ''
+        enabled=True
+        filename_encoding=UTF-8
+      '';
+      force = true; # This forces overwrite of existing content
+    };
     userDirs = {
       enable = true;
       createDirectories = true;
