@@ -28,7 +28,7 @@
       "$mod SHIFT, o, exec, $browser"
       "$mod SHIFT, p, exec, $browser --incognito"
       "$mod, e, exec, $file_browser"
-      "$mod SHIFT, n, exec, $terminal --start-as=normal -- bash -ic 'code ~/nix && exit'"
+      "$mod SHIFT, n, exec, code ~/nix"
       "$mod SHIFT, ESC, exec, $terminal --start-as=normal -- bash -ic 'btop'"
       # "$mod ALT, p, exec, $terminal --start-as=normal -- bash -ic 'proj'"
 

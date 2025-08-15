@@ -9,13 +9,17 @@
 {
   imports = [
     ../common-config.nix
+    ../../modules/system/nix-valet.nix
+    ../../modules/system/device-management/logitech.nix
     ./hardware-configuration.nix
   ];
 
   # Mount second hard drive
-  boot.supportedFilesystems = [
-    "ntfs"
-  ];
+  boot = {
+    supportedFilesystems = [
+      "ntfs"
+    ];
+  };
 
   fileSystems."/mnt/working-files" = {
     device = "/dev/disk/by-uuid/BE8EBBDA8EBB8A03";

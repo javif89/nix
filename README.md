@@ -64,3 +64,7 @@ tools since they played a lot nicer with stylix for theming as well as just resp
 ## Theming
 
 - Consistent **Gruvbox** color scheme across all applications thanks to stylix
+
+## Extra Features
+
+- [Solaar](https://pwr-solaar.github.io/Solaar/) to manage my logitech mouse.

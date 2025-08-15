@@ -131,4 +131,8 @@
       }
     '';
   };
+
+  home.sessionPath = [
+    "$HOME/.config/composer/vendor/bin"
+  ];
 }

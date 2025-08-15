@@ -47,11 +47,15 @@
       nixfmt # Nix formatting
       pkgs.libsForQt5.full # QML formatting (for working on quickshell)
       claude-code
+      xsel
+      nss.tools
 
       # System tools
       btop
       fastfetch
       gnumake
+      dig
+      lsof
 
       # Langs
       php
