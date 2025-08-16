@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, pkgs, ... }:
 
 let
   nasIp = "10.89.0.15";
@@ -41,8 +41,11 @@ in
     udisks2.enable = true;
   };
 
-  fileSystems = fsConfig;
+  # Add NFS utilities
+  environment.systemPackages = with pkgs; [
+    nfs-utils
+  ];
 
-  # # Optional: Create mount directories
-  # systemd.tmpfiles.rules = map (share: "d /mnt/${share} 0755 root root -") shares;
+  fileSystems = fsConfig;
+  systemd.tmpfiles.rules = map (share: "d /mnt/${share} 0755 root root -") shares;
 }

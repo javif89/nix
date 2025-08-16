@@ -60,24 +60,19 @@
       enable = true;
       globalConfig = ''
         auto_https off
-        admin off
+        frankenphp
+        order php_server before file_server 
       '';
       extraConfig = ''
-        *.test:80 {
-          root * /home/javi/projects/{labels.1}
+        # Specific subdomain first (more specific routes come first)
+        http://caddytest.test {
+            respond "We in caddyland"
+        }
 
-          # Try /public directory first (for Laravel)
-          @laravel file /home/javi/projects/{labels.1}/public/index.php
-          root @laravel /home/javi/projects/{labels.1}/public
-
-          # PHP FastCGI
-          php_fastcgi unix//run/phpfpm/www.sock
-
-          # File server for static assets
-          file_server
-
-          # Laravel specific - handle missing files
-          try_files {path} {path}/ /index.php?{query}
+        # Wildcard for other .test domains
+        http://*.test {
+            root * /home/javi/projects/{labels.1}/public
+            php_server
         }
       '';
     };
