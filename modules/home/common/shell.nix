@@ -64,11 +64,6 @@
 
     # Additional bash configuration
     initContent = ''
-        function shellhistory() {
-          cmd=$(cat .zsh_history | grep -E ^: | sed "s/^: //" | sed "s|:0;| |" | sort --reverse | uniq | awk '{print substr($0, index($0, $2))}' | fzf)
-          eval "$cmd"
-        }
-
         function pape() {
           hyprctl hyprpaper preload $1 
           hyprctl hyprpaper wallpaper ", $1"

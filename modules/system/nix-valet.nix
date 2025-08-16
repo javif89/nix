@@ -11,7 +11,18 @@
   lib,
   ...
 }:
+let
+  customCaddy = pkgs.xcaddy {
+    pname = "caddy-frankenphp";
+    version = "2.7.6";
 
+    subPackages = [ "cmd/caddy" ];
+
+    plugins = [
+      "github.com/dunglas/frankenphp/caddy"
+    ];
+  };
+in
 {
   services = {
     # Enable dnsmasq
@@ -58,6 +69,7 @@
     # Enable Caddy
     caddy = {
       enable = true;
+      package = customCaddy;
       globalConfig = ''
         auto_https off
         frankenphp

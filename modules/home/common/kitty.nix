@@ -14,7 +14,6 @@ let
     hide_window_decorations yes
 
     map ctrl+shift+t new_tab_with_cwd
-    map ctrl+r send_text all \x15shellhistory\r
   '';
 in
 {

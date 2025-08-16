@@ -13,6 +13,7 @@
     ./common/shell.nix
     ./common/starship.nix
     ./common/yazi.nix
+    ./common/fzf.nix
     ./hyprland
   ];
 
@@ -36,7 +37,6 @@
 
       # Terminal tools
       ripgrep
-      fzf
       bat
       eza
       jq
