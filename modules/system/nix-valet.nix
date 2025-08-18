@@ -11,18 +11,7 @@
   lib,
   ...
 }:
-let
-  customCaddy = pkgs.xcaddy {
-    pname = "caddy-frankenphp";
-    version = "2.7.6";
 
-    subPackages = [ "cmd/caddy" ];
-
-    plugins = [
-      "github.com/dunglas/frankenphp/caddy"
-    ];
-  };
-in
 {
   services = {
     # Enable dnsmasq
@@ -47,44 +36,92 @@ in
     };
 
     # Enable PHP-FPM
-    phpfpm = {
-      pools.www = {
-        user = "javi";
-        group = "users";
-        settings = {
-          "listen.owner" = "javi";
-          "listen.group" = "users";
-          "listen.mode" = "0660";
-          "pm" = "dynamic";
-          "pm.max_children" = 32;
-          "pm.start_servers" = 2;
-          "pm.min_spare_servers" = 2;
-          "pm.max_spare_servers" = 4;
-          "pm.max_requests" = 500;
-        };
-        phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
-      };
-    };
+    # phpfpm = {
+    #   pools.www = {
+    #     user = "javi";
+    #     group = "users";
+    #     settings = {
+    #       "listen.owner" = "javi";
+    #       "listen.group" = "users";
+    #       "listen.mode" = "0660";
+    #       "pm" = "dynamic";
+    #       "pm.max_children" = 32;
+    #       "pm.start_servers" = 2;
+    #       "pm.min_spare_servers" = 2;
+    #       "pm.max_spare_servers" = 4;
+    #       "pm.max_requests" = 500;
+    #     };
+    #     phpEnv."PATH" = lib.makeBinPath [ pkgs.php ];
+    #   };
+    # };
 
     # Enable Caddy
     caddy = {
       enable = true;
-      package = customCaddy;
+      package = pkgs.frankenphp;
       globalConfig = ''
         auto_https off
         frankenphp
+        debug
         order php_server before file_server 
       '';
+      /*
+        WORKING CONFIG
+            map {host} {pname} {
+              ~^(.+)\.test$ $1
+              default "unknown"
+            }
+            root * /home/javi/projects/{pname}/public
+
+            # Add file server directive with browse enabled for debugging
+            file_server browse
+
+            # Or for PHP apps, add try_files
+            try_files {path} {path}/ /index.php?{query}
+
+            php_server
+      */
       extraConfig = ''
         # Specific subdomain first (more specific routes come first)
         http://caddytest.test {
-            respond "We in caddyland"
+            respond "fuck"
         }
 
-        # Wildcard for other .test domains
-        http://*.test {
-            root * /home/javi/projects/{labels.1}/public
+        http://*.test, http://*.*.test {
+          map {host} {project_dir} {
+            ~^(.+)\.test$ $1
+            default "unknown"
+          }
+
+          vars base_path "/home/javi/projects/{project_dir}"
+
+          @laravel file {
+              root {vars.base_path}/public
+              try_files index.php
+          }
+
+          @jigsaw file {
+              root {vars.base_path}/build_local
+              try_files index.html
+          }
+
+          handle @laravel {
+            root * {vars.base_path}/public
             php_server
+            file_server
+
+            try_files {path} {path}/ /index.php?{query}
+          }
+
+          handle @jigsaw {
+              root * {vars.base_path}/build_local
+              try_files {path} {path}/ /index.html
+              file_server
+          }
+
+          handle {
+            respond "Unknown project type"
+          }
         }
       '';
     };
@@ -132,6 +169,11 @@ in
     serviceConfig = {
       User = lib.mkForce "javi";
       Group = lib.mkForce "users";
+
+      ProtectHome = lib.mkForce false; # This is key!
+      ProtectSystem = lib.mkForce false;
+      PrivateTmp = lib.mkForce false;
+
       # More comprehensive capabilities
       AmbientCapabilities = [
         "CAP_NET_BIND_SERVICE"

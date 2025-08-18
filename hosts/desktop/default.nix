@@ -9,7 +9,7 @@
 {
   imports = [
     ../common-config.nix
-    # ../../modules/system/nix-valet.nix
+    ../../modules/system/nix-valet.nix
     ../../modules/system/device-management/logitech.nix
     ./hardware-configuration.nix
   ];
