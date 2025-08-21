@@ -55,14 +55,14 @@
       "$mod, SPACE, exec, wofi --show drun"
       "$mod, d, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji"
 
-      "$mod SHIFT, s, exec, hyprshot --mode region"
+      "$mod SHIFT, s, exec, flameshot gui"
       ", PRINT, exec, hyprshot --mode output"
 
       "$mod SHIFT, c, togglespecialworkspace, comms"
       "$mod SHIFT, a, togglespecialworkspace, research"
       "$mod SHIFT ALT, x, exec, hyprctl dispatch exit"
-      "SHIFT, Print, exec, grimblast copy area"
-      "CTRL, Print, exec, grimblast copy active"
+      # "SHIFT, Print, exec, grimblast copy area"
+      # "CTRL, Print, exec, grimblast copy active"
     ]
     ++ (
       # workspaces

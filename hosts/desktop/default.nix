@@ -21,15 +21,16 @@
     ];
   };
 
-  fileSystems."/mnt/working-files" = {
+  fileSystems."/home/javi/working-files" = {
     device = "/dev/disk/by-uuid/BE8EBBDA8EBB8A03";
     fsType = "ntfs";
     options = [
       "uid=1000" # your user ID (check with `id -u`)
       "gid=100" # your primary group ID (check with `id -g`)
       "dmask=022" # dir permissions
-      "fmask=133" # file permissions
+      "fmask=022" # file permissions
       "nofail"
+      "exec"
 
       # make Nautilus show it with a friendly name/icon
       "x-gvfs-show"

@@ -12,6 +12,7 @@
     ./hyprpanel.nix
     ./wofi.nix
     ./desktop-env.nix
+    ./screenshots.nix
   ];
 
   home = {
@@ -22,16 +23,8 @@
     packages = with pkgs; [
       # Notifications
       libnotify
-
-      # Screenshots
-      grim
-      slurp
-      wl-clipboard
-      hyprshot
-
       # Desktop env
       hyprpanel
-
       # Utility
       wl-clipboard
     ];
