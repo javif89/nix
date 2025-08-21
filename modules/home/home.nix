@@ -14,6 +14,7 @@
     ./common/starship.nix
     ./common/yazi.nix
     ./common/fzf.nix
+    ./common/vscode.nix
     ./hyprland
   ];
 
