@@ -13,6 +13,7 @@ in
   environment = {
     etc = {
       "sddm-wallpaper.png".source = "${assets}/sddm-background.png";
+      "lockscreen.png".source = "${assets}/lockscreen.png";
       "gtk-3.0/settings.ini".text = ''
         [Settings]
         gtk-icon-theme-name=Papirus

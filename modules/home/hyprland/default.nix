@@ -10,6 +10,7 @@
     ./binds.nix
     ./hyprpaper.nix
     ./hyprpanel.nix
+    ./hyprlock.nix
     ./wofi.nix
     ./desktop-env.nix
     ./screenshots.nix
@@ -25,6 +26,7 @@
       libnotify
       # Desktop env
       hyprpanel
+      hyprpolkitagent
       # Utility
       wl-clipboard
     ];
@@ -97,6 +99,8 @@
       exec-once = [
         # "quickshell -c hyprshell"
         "hyprpanel"
+        "hypridle"
+        "systemctl --user start hyprpolkitagent"
       ];
     };
 

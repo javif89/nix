@@ -61,6 +61,7 @@
       "$mod SHIFT, c, togglespecialworkspace, comms"
       "$mod SHIFT, a, togglespecialworkspace, research"
       "$mod SHIFT ALT, x, exec, hyprctl dispatch exit"
+      "$mod SHIFT ALT, l, exec, hyprlock"
       # "SHIFT, Print, exec, grimblast copy area"
       # "CTRL, Print, exec, grimblast copy active"
     ]

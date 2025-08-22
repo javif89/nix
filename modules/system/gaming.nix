@@ -12,4 +12,11 @@
   environment.systemPackages = with pkgs; [
     gamemode
   ];
+
+  # In your configuration.nix
+  hardware.opengl = {
+    enable = true;
+  };
+
+  services.xserver.videoDrivers = [ "nvidia" ];
 }

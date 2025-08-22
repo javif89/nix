@@ -50,6 +50,7 @@
       claude-code
       xsel
       nss.tools
+      ansible
 
       # System tools
       btop
