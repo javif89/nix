@@ -27,7 +27,6 @@
   #     package = pkgs.papirus-icon-theme;
   #   };
   # };
-
   home = {
     username = "javi";
     homeDirectory = "/home/javi";
@@ -35,6 +34,10 @@
     packages = with pkgs; [
       # Basics
       quickshell
+      zoom-us
+      obsidian
+      kdePackages.kdenlive
+      ffmpeg
 
       # Terminal tools
       ripgrep
@@ -66,6 +69,7 @@
       go
       nodejs_22
       bun
+      zls # Zig language server
     ];
 
     sessionVariables = {
@@ -87,6 +91,11 @@
   programs = {
     btop = {
       enable = true;
+    };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
     };
   };
 

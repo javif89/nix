@@ -60,6 +60,10 @@
       # Golang
       gr = "go run .";
       gmt = "go mod tidy";
+
+      # Zig
+      zb = "zig build";
+      zbr = "zig build run";
     };
 
     # Additional bash configuration

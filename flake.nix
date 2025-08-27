@@ -12,6 +12,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    zig.url = "github:mitchellh/zig-overlay";
 
     my-assets = {
       url = "path:./assets";
@@ -24,6 +25,7 @@
       self,
       nixpkgs,
       my-assets,
+      zig,
       ...
     }@inputs:
     let
@@ -32,6 +34,7 @@
       # Common overlays for all hosts
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
+        inputs.zig.overlays.default
       ];
 
       # Helper function to create a host configuration

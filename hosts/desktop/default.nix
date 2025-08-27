@@ -41,6 +41,7 @@
   environment = {
     systemPackages = with pkgs; [
       pkgs.ntfs3g
+      zigpkgs.master
     ];
   };
 }

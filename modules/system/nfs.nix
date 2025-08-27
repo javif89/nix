@@ -7,10 +7,11 @@ let
     "backups"
     "container-data"
     "javi"
+    "xrandr"
   ];
 
   configureShare = share: {
-    name = "/mnt/${share}";
+    name = "/home/javi/network-shares/${share}";
     value = {
       device = "${nasIp}:${baseMnt}/${share}";
       fsType = "nfs";
@@ -19,11 +20,6 @@ let
         "noauto"
         "rw"
         "vers=4"
-
-        # make Nautilus/Dolphin/Any File Manager show it with a friendly name/icon
-        "x-gvfs-show"
-        "x-gvfs-name=NAS — ${share}"
-        "x-gvfs-icon=network-server"
       ];
     };
   };
