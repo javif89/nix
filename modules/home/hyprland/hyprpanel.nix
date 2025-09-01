@@ -8,7 +8,7 @@
 
 let
   themeDirectory = "${config.programs.hyprpanel.package}/share/themes";
-  currentTheme = "monochrome";
+  currentTheme = "gruvbox_vivid";
   raw = lib.importJSON "${themeDirectory}/${currentTheme}.json";
   selectedTheme = if raw ? theme then raw.theme else raw;
 
@@ -32,6 +32,7 @@ let
   base = themeAttrs.theme;
   themeOverrides = {
     font.size = "14px";
+    bar.background = "#000000";
   };
 
   finalTheme = lib.recursiveUpdate base themeOverrides;
