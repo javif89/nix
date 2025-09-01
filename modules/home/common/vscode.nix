@@ -46,7 +46,7 @@
         ms-python.python
         ms-python.vscode-pylance
         # Zig
-        ziglang.vscode-zig
+        # ziglang.vscode-zig
         # C++
         ms-vscode.cpptools
         ms-vscode.cmake-tools
@@ -87,6 +87,12 @@
           version = "1.37.0";
           sha256 = "q5CTRj746404yM9mhOWYAGTzt/8CJ7Fx4QUQSJ+LdLs=";
         }
+        {
+          name = "vscode-antlers";
+          publisher = "stillat-llc";
+          version = "2.6.22";
+          sha256 = "3JtT5AxtbxciivfG6JaUYNPL74+8ydhDeB7SCE/92ko=";
+        }
         # Qt Extension Pack
         {
           name = "qt-qml";
@@ -115,7 +121,7 @@
       "github.copilot.enable" = false;
       "window.titleBarStyle" = "custom";
       "window.customTitleBarVisibility" = "auto";
-      "workbench.colorTheme" = lib.mkForce "Gruvbox Dark Hard";
+      "workbench.colorTheme" = lib.mkForce "Stylix";
       "git.autofetch" = true;
       "editor.fontSize" = lib.mkForce 18;
       "editor.snippetSuggestions" = "top";
@@ -219,6 +225,10 @@
       "workbench.editor.pinnedTabsOnSeparateRow" = true;
       "C_Cpp.default.compileCommands" = "\${workspaceFolder}/build/compile_commands.json";
       "C_Cpp.default.configurationProvider" = "ms-vscode.cmake-tools";
+      "antlersLanguageServer.languageVersion" = "runtime";
+      "[antlers]" = {
+        "editor.defaultFormatter" = "html";
+      };
       "window.menuBarVisibility" = "compact";
       "vim.leader" = "<space>";
       "vim.normalModeKeyBindings" = [

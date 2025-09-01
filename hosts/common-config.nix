@@ -142,7 +142,6 @@
 
   programs = {
     hyprland.enable = true;
-
     ssh = {
       startAgent = true;
       extraConfig = "
@@ -168,7 +167,7 @@
   # Theme
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     # image = "/home/javi/Documents/wallpapers/Fantasy-Mountain.png";
     polarity = "dark";
   };

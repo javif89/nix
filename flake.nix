@@ -7,6 +7,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprshell.url = "git+https://gitgud.foo/thegrind/hypr-shell.git";
+    hyprland.url = "github:hyprwm/Hyprland";
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";

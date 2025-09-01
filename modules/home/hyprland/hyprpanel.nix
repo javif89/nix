@@ -1,5 +1,41 @@
-{ inputs, pkgs, ... }:
+{
+  inputs,
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
+let
+  themeDirectory = "${config.programs.hyprpanel.package}/share/themes";
+  currentTheme = "monochrome";
+  raw = lib.importJSON "${themeDirectory}/${currentTheme}.json";
+  selectedTheme = if raw ? theme then raw.theme else raw;
+
+  # We need to turn the theme json into a nested attribute set. Otherwise we
+  # end up with an incorrect configuration that looks like:
+  # theme: {theme.bar.transparent: "value", theme.foo.bar: "another value"}
+  # when what we really want is: theme: {bar: ..., buttons: ...}
+  # ----
+  # turn "foo.bar.baz" and value into { foo = { bar = { baz = value; }; }; }
+  nestAttr = path: value: lib.attrsets.setAttrByPath (lib.splitString "." path) value;
+
+  # merge a flat attrset into nested
+  unflatten =
+    flat:
+    lib.foldlAttrs (
+      acc: k: v:
+      lib.recursiveUpdate acc (nestAttr k v)
+    ) { } flat;
+
+  themeAttrs = unflatten selectedTheme;
+  base = themeAttrs.theme;
+  themeOverrides = {
+    font.size = "14px";
+  };
+
+  finalTheme = lib.recursiveUpdate base themeOverrides;
+in
 {
   programs.hyprpanel = {
     enable = true;
@@ -41,17 +77,8 @@
       menus.dashboard.directories.enabled = false;
       menus.dashboard.stats.enable_gpu = true;
 
-      theme = import ./hyprpanel/theme-gruvbox.nix;
-
-      # theme.bar.transparent = {
-      #   transparent = false;
-      #   buttons.style = "wave";
-      # };
-
-      # theme.font = {
-      #   name = "CaskaydiaCove NF";
-      #   size = "14px";
-      # };
+      # theme = builtins.fromJSON (builtins.readFile "${themeDirectory}/${currentTheme}.json");
+      theme = finalTheme;
     };
   };
 }

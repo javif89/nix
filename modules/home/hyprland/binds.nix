@@ -23,6 +23,7 @@
     ];
 
     bind = [
+      # "$mod, a, hyprexpo:expo, toggle"
       # Start programs
       "$mod, q, exec, $terminal"
       "$mod SHIFT, o, exec, $browser"
@@ -52,7 +53,8 @@
 
       "$mod, f, fullscreen, 0"
       "$mod, v, togglefloating, active"
-      "$mod, SPACE, exec, wofi --show drun"
+      # "$mod, SPACE, exec, wofi --show drun"
+      "$mod, SPACE, exec, waycast"
       "$mod, d, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji"
 
       "$mod SHIFT, s, exec, flameshot gui"
@@ -82,9 +84,4 @@
       )
     );
   };
-
-  wayland.windowManager.hyprland.plugins = [
-    # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
-  ];
-
 }

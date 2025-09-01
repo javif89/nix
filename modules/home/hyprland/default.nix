@@ -19,6 +19,13 @@
   home = {
     sessionVariables = {
       NIXOS_OZON_WL = "1";
+
+      HYPR_PLUGIN_DIR = pkgs.symlinkJoin {
+        name = "hyprland-plugins";
+        paths = with pkgs.hyprlandPlugins; [
+          hyprexpo
+        ];
+      };
     };
 
     packages = with pkgs; [
@@ -53,6 +60,10 @@
   wayland.windowManager.hyprland = {
 
     enable = true;
+
+    plugins = with pkgs.hyprlandPlugins; [
+      hyprexpo
+    ];
 
     settings = {
 
@@ -103,9 +114,5 @@
         "systemctl --user start hyprpolkitagent"
       ];
     };
-
-    plugins = [
-      # inputs.hyprland-plugins.packages.${pkgs.stdenv.hostPlatform.system}.hyprbars
-    ];
   };
 }
