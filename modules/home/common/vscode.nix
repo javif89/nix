@@ -45,6 +45,8 @@
         ms-python.debugpy
         ms-python.python
         ms-python.vscode-pylance
+        # Rust
+        rust-lang.rust-analyzer
         # Zig
         # ziglang.vscode-zig
         # C++
@@ -225,6 +227,13 @@
       "workbench.editor.pinnedTabsOnSeparateRow" = true;
       "C_Cpp.default.compileCommands" = "\${workspaceFolder}/build/compile_commands.json";
       "C_Cpp.default.configurationProvider" = "ms-vscode.cmake-tools";
+      # Rust Analyzer
+      "rust-analyzer.inlayHints.chainingHints.enable" = false;
+      "rust-analyzer.inlayHints.closingBraceHints.enable" = false;
+      "rust-analyzer.inlayHints.parameterHints.enable" = false;
+      "rust-analyzer.inlayHints.typeHints.enable" = false;
+      "rust-analyzer.inlayHints.closureStyle" = "hide";
+      # Antlers (Statamic)
       "antlersLanguageServer.languageVersion" = "runtime";
       "[antlers]" = {
         "editor.defaultFormatter" = "html";

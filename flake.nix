@@ -8,6 +8,7 @@
     };
     hyprshell.url = "git+https://gitgud.foo/thegrind/hypr-shell.git";
     hyprland.url = "github:hyprwm/Hyprland";
+    waycast.url = "git+https://gitgud.foo/thegrind/waycast";
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";
@@ -40,6 +41,7 @@
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
         inputs.zig.overlays.default
+        inputs.waycast.overlays.default
       ];
 
       # Helper function to create a host configuration

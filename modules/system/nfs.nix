@@ -8,6 +8,7 @@ let
     "container-data"
     "javi"
     "xrandr"
+    "media"
   ];
 
   configureShare = share: {

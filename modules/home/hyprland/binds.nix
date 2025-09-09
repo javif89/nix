@@ -23,7 +23,7 @@
     ];
 
     bind = [
-      # "$mod, a, hyprexpo:expo, toggle"
+      "$mod, a, hyprexpo:expo, toggle"
       # Start programs
       "$mod, q, exec, $terminal"
       "$mod SHIFT, o, exec, $browser"

@@ -14,6 +14,7 @@
     ./wofi.nix
     ./desktop-env.nix
     ./screenshots.nix
+    ./waycast.nix
   ];
 
   home = {

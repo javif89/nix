@@ -70,6 +70,10 @@
       nodejs_22
       bun
       zls # Zig language server
+      rustup
+      gcc
+      pkg-config
+      python3
     ];
 
     sessionVariables = {
