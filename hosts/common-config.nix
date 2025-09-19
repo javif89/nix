@@ -99,6 +99,7 @@
       brave
       git
       openssh
+      openssl
       xdg-user-dirs-gtk # This helps with Nautilus integration
       cachix
     ];

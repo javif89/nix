@@ -15,6 +15,7 @@
     ./common/yazi.nix
     ./common/fzf.nix
     ./common/vscode.nix
+    ./common/zed.nix
     ./hyprland
   ];
 
@@ -51,9 +52,11 @@
       nixfmt # Nix formatting
       pkgs.libsForQt5.full # QML formatting (for working on quickshell)
       claude-code
+      codex
       xsel
       nss.tools
       ansible
+      gh
 
       # System tools
       btop
@@ -107,6 +110,7 @@
     enable = true;
     targets = {
       btop.enable = true;
+      zed.enable = true;
     };
   };
 

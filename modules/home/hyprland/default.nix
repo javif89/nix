@@ -95,6 +95,7 @@
       # Window rules
       windowrulev2 = [
         "opacity 0.85, class:^(Code)$"
+        "opacity 0.85, class:^(Zed)$"
       ];
 
       decoration = {
