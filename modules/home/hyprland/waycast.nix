@@ -9,7 +9,6 @@
   imports = [ inputs.waycast.homeManagerModules.default ];
   programs.waycast = {
     enable = true;
-    enableDaemon = true;
     settings = {
       plugins.projects = {
         open_command = "code -n {path}";
