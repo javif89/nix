@@ -39,6 +39,7 @@
       obsidian
       kdePackages.kdenlive
       ffmpeg
+      baobab # Disk usage
 
       # Terminal tools
       ripgrep
@@ -50,7 +51,7 @@
       jetbrains.datagrip
       vscode
       nixfmt # Nix formatting
-      pkgs.libsForQt5.full # QML formatting (for working on quickshell)
+      # pkgs.libsForQt5.full # QML formatting (for working on quickshell)
       claude-code
       codex
       xsel
@@ -77,6 +78,16 @@
       gcc
       pkg-config
       python3
+
+      # Waycast stuff
+      wayland
+      libxkbcommon
+      xorg.libXcursor
+      xorg.libX11
+      xorg.libXrandr
+      xorg.libXi
+      libGL
+      xorg.libXinerama
     ];
 
     sessionVariables = {

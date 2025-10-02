@@ -98,6 +98,12 @@
         "opacity 0.85, class:^(Zed)$"
       ];
 
+      layerrule = [
+        "noanim, Waycast"
+        "blur, Waycast"
+        "noanim, gtk4-layer-shell"
+      ];
+
       decoration = {
         blur = {
           enabled = false;

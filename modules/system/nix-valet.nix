@@ -61,10 +61,19 @@
       package = pkgs.frankenphp;
       globalConfig = ''
         auto_https off
-        frankenphp
+        frankenphp {
+          php_ini post_max_size 500M
+        }
         debug
         order php_server before file_server 
       '';
+      # php_ini {
+      #   memory_limit 1024M
+      #   max_execution_time 0
+      #   post_max_size = 500M
+      #   upload_max_filesize = 500M
+      #   max_input_time = 300
+      # }
       /*
         WORKING CONFIG
             map {host} {pname} {
@@ -84,7 +93,7 @@
       extraConfig = ''
         # Specific subdomain first (more specific routes come first)
         http://caddytest.test {
-            respond "fuck"
+            respond "OK"
         }
 
         http://*.test, http://*.*.test {
