@@ -8,7 +8,8 @@
     };
     hyprshell.url = "git+https://gitgud.foo/thegrind/hypr-shell.git";
     hyprland.url = "github:hyprwm/Hyprland";
-    waycast.url = "git+https://gitgud.foo/thegrind/waycast";
+    # waycast.url = "git+https://gitgud.foo/thegrind/waycast";
+    waycast.url = "github:javif89/waycast";
     # hyprland-plugins = {
     #   url = "github:hyprwm/hyprland-plugins";
     #   inputs.hyprland.follows = "hyprland";

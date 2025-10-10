@@ -19,15 +19,9 @@
     ./hyprland
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  # evaluation warning: javi profile: You have set either `nixpkgs.config` or `nixpkgs.overlays` while using `home-manager.useGlobalPkgs`
+  # nixpkgs.config.allowUnfree = true;
 
-  # gtk = {
-  #   enable = true;
-  #   iconTheme = {
-  #     name = "Papirus";
-  #     package = pkgs.papirus-icon-theme;
-  #   };
-  # };
   home = {
     username = "javi";
     homeDirectory = "/home/javi";
@@ -80,14 +74,20 @@
       python3
 
       # Waycast stuff
+      expat
+      fontconfig
+      freetype
+      libGL
+      xorg.libX11
+      xorg.libXcursor
+      xorg.libXi
+      xorg.libXrandr
       wayland
       libxkbcommon
-      xorg.libXcursor
-      xorg.libX11
-      xorg.libXrandr
-      xorg.libXi
-      libGL
-      xorg.libXinerama
+      vulkan-loader
+
+      # Game dev stuff
+      tiled
     ];
 
     sessionVariables = {

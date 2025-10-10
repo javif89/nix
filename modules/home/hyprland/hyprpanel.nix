@@ -32,7 +32,7 @@ let
   base = themeAttrs.theme;
   themeOverrides = {
     font.size = "14px";
-    bar.background = "#000000";
+    bar.background = lib.mkForce "#000000";
   };
 
   finalTheme = lib.recursiveUpdate base themeOverrides;
@@ -79,7 +79,7 @@ in
       menus.dashboard.stats.enable_gpu = true;
 
       # theme = builtins.fromJSON (builtins.readFile "${themeDirectory}/${currentTheme}.json");
-      theme = finalTheme;
+      theme = lib.mkForce finalTheme;
     };
   };
 }

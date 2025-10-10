@@ -13,7 +13,7 @@
     package = pkgs.vscode; # or pkgs.vscodium for the open-source version
 
     # Extensions
-    extensions =
+    profiles.default.extensions =
       with pkgs.vscode-extensions;
       [
         # Misc
@@ -117,7 +117,7 @@
       ];
 
     # User settings
-    userSettings = {
+    profiles.default.userSettings = {
       # Disable the fucking copilot chat
       "github.copilot.chat.showChatPanel" = false;
       "github.copilot.enable" = false;
@@ -312,7 +312,7 @@
     };
 
     # Keybindings
-    keybindings = [
+    profiles.default.keybindings = [
       {
         "key" = "ctrl+k";
         "command" = "git.commitAll";

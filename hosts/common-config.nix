@@ -10,12 +10,20 @@
   # Bootloader.
   boot = {
     loader = {
-      systemd-boot = {
+      # systemd-boot = {
+      #   enable = true;
+      # };
+
+      grub = {
         enable = true;
+        devices = [ "nodev" ];
+        useOSProber = true;
+        efiSupport = true;
       };
 
       efi = {
         canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
       };
     };
 
