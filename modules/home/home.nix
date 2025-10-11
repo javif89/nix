@@ -87,7 +87,7 @@
       vulkan-loader
 
       # Game dev stuff
-      tiled
+      ldtk
     ];
 
     sessionVariables = {
