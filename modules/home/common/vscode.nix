@@ -301,6 +301,7 @@
       "svelte.enable-ts-plugin" = true;
       "workbench.sideBar.location" = "right";
       "workbench.panel.defaultLocation" = "right";
+      "terminal.integrated.stickyScroll.enabled" = false;
       "zig.zls.enabled" = "on";
       "zig.path" = "${zigpkg}/bin/zig";
       "zig.zls.path" = "${pkgs.zls}/bin/zls";
