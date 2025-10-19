@@ -36,7 +36,7 @@ tools since they played a lot nicer with stylix for theming as well as just resp
 - **PDF Viewer**: Okular 
 - **Audio Player**: Elisa 
 - **Archive/Zip Manager**: Ark
-- **App Launcher:** Wofi
+- **App Launcher:** [WayCast](https://waycast.dev/) (My own launcher)
 
 ### Ecosystem
 

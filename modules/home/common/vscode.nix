@@ -66,6 +66,12 @@
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
         {
+          name = "vscode-just";
+          publisher = "kokakiwi";
+          version = "2.1.0";
+          sha256 = "1ncWDFG111HJ+PmA6k011qgC4uWMOs/wiE4F0A48UtY=";
+        }
+        {
           name = "base16-tinted-themes";
           publisher = "TintedTheming";
           version = "0.27.0";
