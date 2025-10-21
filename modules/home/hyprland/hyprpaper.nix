@@ -11,7 +11,7 @@
     pkgs.hyprpaper
   ];
   # Home Manager
-  xdg.configFile."wallpaper.png".source = "${assets}/slums.png";
+  xdg.configFile."wallpaper.png".source = "${assets}/Forest 1.png";
   services.hyprpaper = {
     enable = true;
     settings = {

@@ -8,7 +8,7 @@
 
 let
   themeDirectory = "${config.programs.hyprpanel.package}/share/themes";
-  currentTheme = "gruvbox_vivid";
+  currentTheme = "monochrome";
   raw = lib.importJSON "${themeDirectory}/${currentTheme}.json";
   selectedTheme = if raw ? theme then raw.theme else raw;
 
