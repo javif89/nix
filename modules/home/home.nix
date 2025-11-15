@@ -34,6 +34,7 @@
       kdePackages.kdenlive
       ffmpeg
       baobab # Disk usage
+      gparted
 
       # Terminal tools
       ripgrep

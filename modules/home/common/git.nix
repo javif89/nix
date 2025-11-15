@@ -12,12 +12,12 @@
   programs.git = {
     enable = true;
 
-    # User information (from your init.sh)
-    userName = "javif89";
-    userEmail = "javier0eduardo@hotmail.com";
+    settings = {
+      user = {
+        name = "javif89";
+        email = "javier0eduardo@hotmail.com";
+      };
 
-    # Git settings
-    extraConfig = {
       init = {
         defaultBranch = "main";
       };

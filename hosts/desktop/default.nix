@@ -29,6 +29,7 @@
       "gid=100" # your primary group ID (check with `id -g`)
       "dmask=022" # dir permissions
       "fmask=022" # file permissions
+      "umask=0022"
       "nofail"
       "exec"
 
@@ -42,6 +43,7 @@
     systemPackages = with pkgs; [
       pkgs.ntfs3g
       zigpkgs.master
+      obs-studio
     ];
   };
 }

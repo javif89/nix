@@ -30,6 +30,9 @@
         ms-vsliveshare.vsliveshare
         pkief.material-icon-theme
         tamasfe.even-better-toml
+        # Haskell
+        haskell.haskell
+        justusadam.language-haskell
         # PHP
         bmewburn.vscode-intelephense-client
         # Html/Front End Support
@@ -70,6 +73,12 @@
           publisher = "kokakiwi";
           version = "2.1.0";
           sha256 = "1ncWDFG111HJ+PmA6k011qgC4uWMOs/wiE4F0A48UtY=";
+        }
+        {
+          name = "mdc";
+          publisher = "nuxt";
+          version = "0.4.2";
+          sha256 = "KWwz7fq/cHtvcy9QvetbZ3p+ODqqQlzshL8oeK5CekI=";
         }
         {
           name = "base16-tinted-themes";
