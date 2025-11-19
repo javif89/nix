@@ -73,9 +73,9 @@
         repeat_rate = 20;
       };
 
-      monitor = [
-        "DP-5, 3440x1440@179.99, 0x0, 1"
-      ];
+      # monitor = [
+      #   "DP-5, 3440x1440@179.99, 0x0, 1"
+      # ];
 
       general = {
         layout = "master";

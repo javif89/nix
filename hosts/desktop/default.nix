@@ -11,6 +11,7 @@
     ../common-config.nix
     ../../modules/system/nix-valet.nix
     ../../modules/system/device-management/logitech.nix
+    ./hyprland/monitors.nix
     ./hardware-configuration.nix
   ];
 
