@@ -137,5 +137,7 @@
 
   home.sessionPath = [
     "$HOME/.config/composer/vendor/bin"
+    "$HOME/.fly/bin"
+    "$HOME/.cargo/bin"
   ];
 }
