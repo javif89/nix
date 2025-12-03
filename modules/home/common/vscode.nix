@@ -3,7 +3,6 @@
   pkgs,
   lib,
   inputs,
-  zigpkg,
   ...
 }:
 
@@ -29,7 +28,7 @@
         shd101wyy.markdown-preview-enhanced
         ms-vsliveshare.vsliveshare
         pkief.material-icon-theme
-        tamasfe.even-better-toml
+        anthropic.claude-code
         # Haskell
         haskell.haskell
         justusadam.language-haskell
@@ -50,21 +49,14 @@
         ms-python.vscode-pylance
         # Rust
         rust-lang.rust-analyzer
-        # Zig
-        # ziglang.vscode-zig
-        # C++
-        ms-vscode.cpptools
-        ms-vscode.cmake-tools
-        # delgan.qml-format
+        tamasfe.even-better-toml
         # Nix
         mkhl.direnv
         jnoortheen.nix-ide
         # adpyke.vscode-sql-formatter
         # adrianwilczynski.alpine-js-intellisense
-        # anthropic.claude-code
         # cierra.livewire-vscode
         # neilbrayfield.php-docblocker
-        # zignd.html-css-class-completion
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
@@ -321,14 +313,6 @@
       "workbench.sideBar.location" = "right";
       "workbench.panel.defaultLocation" = "right";
       "terminal.integrated.stickyScroll.enabled" = false;
-      "zig.zls.enabled" = "on";
-      "zig.path" = "${zigpkg}/bin/zig";
-      "zig.zls.path" = "${pkgs.zls}/bin/zls";
-      "zig.zls.zigLibPath" = "${zigpkg}/lib";
-      "zig.zls.completionLabelDetails" = false;
-      "zig.zls.enableArgumentPlaceholders" = false;
-      "zig.zls.inlayHintsShowParameterName" = false;
-      "zig.zls.inlayHintsShowVariableTypeHints" = false;
     };
 
     # Keybindings

@@ -66,9 +66,7 @@
       php84Packages.composer
       laravel
       go
-      nodejs_22
       bun
-      zls # Zig language server
       rustup
       gcc
       pkg-config

@@ -186,7 +186,6 @@
     useGlobalPkgs = true;
     extraSpecialArgs = {
       inherit inputs;
-      zigpkg = pkgs.zigpkgs.master;
       assets = assets;
     };
     users = {
