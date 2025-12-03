@@ -155,6 +155,9 @@
       "[astro]" = {
         "editor.formatOnSave" = false;
       };
+      "[vue]" = {
+        "editor.defaultFormatter" = "Vue.volar";
+      };
       "[dockerfile]" = {
         "editor.formatOnSave" = false;
         "editor.formatOnPaste" = false;
@@ -172,6 +175,7 @@
         "blade" = "html";
         "templ" = "html";
         "markdown" = "html";
+        "mdc" = "html";
       };
       "explorer.openEditors.visible" = 0;
       "editor.tabCompletion" = "on";
