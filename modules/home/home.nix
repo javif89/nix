@@ -62,9 +62,6 @@
       lsof
 
       # Langs
-      php
-      php84Packages.composer
-      laravel
       go
       bun
       rustup

@@ -28,7 +28,6 @@
         shd101wyy.markdown-preview-enhanced
         ms-vsliveshare.vsliveshare
         pkief.material-icon-theme
-        anthropic.claude-code
         # Haskell
         haskell.haskell
         justusadam.language-haskell
@@ -60,6 +59,12 @@
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
+        {
+          name = "claude-code";
+          publisher = "anthropic";
+          version = "2.0.58";
+          sha256 = "/bMiwaYdJHDiSvCsLZsQQmiwbgK3knbeSoYyXFnzzuI=";
+        }
         {
           name = "vscode-just";
           publisher = "kokakiwi";
