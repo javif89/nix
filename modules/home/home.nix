@@ -69,19 +69,6 @@
       pkg-config
       python3
 
-      # Waycast stuff
-      expat
-      fontconfig
-      freetype
-      libGL
-      xorg.libX11
-      xorg.libXcursor
-      xorg.libXi
-      xorg.libXrandr
-      wayland
-      libxkbcommon
-      vulkan-loader
-
       # Game dev stuff
       ldtk
     ];
