@@ -46,7 +46,7 @@
       nixfmt # Nix formatting
       xsel
       nss.tools
-      ansible
+      claude-code
 
       # System tools
       btop
@@ -59,7 +59,6 @@
       bun
       rustup
       pkg-config
-      python3
     ];
 
     sessionVariables = {

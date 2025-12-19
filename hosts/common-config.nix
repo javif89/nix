@@ -153,10 +153,6 @@
     hyprland.enable = true;
     ssh = {
       startAgent = true;
-      extraConfig = "
-      Host myhost
-        Hostname gitgud.foo 
-    ";
     };
 
     # More thunar support

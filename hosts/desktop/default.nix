@@ -22,6 +22,19 @@
     ];
   };
 
+  programs.ssh.extraConfig = "
+    Host myhost
+      Hostname gitgud.foo 
+    Host gitgud.boo
+      HostName 10.89.0.102
+      User git
+      Port 222
+      PubkeyAuthentication yes
+      ForwardAgent yes
+      IdentitiesOnly yes
+      IdentityFile ~/.ssh/id_gitea_key
+  ";
+
   fileSystems."/home/javi/working-files" = {
     device = "/dev/disk/by-uuid/BE8EBBDA8EBB8A03";
     fsType = "ntfs";
@@ -39,6 +52,15 @@
       "x-gvfs-name=Working Files"
     ];
   };
+
+  virtualisation.docker.enable = true;
+  users.users.javi.extraGroups = [ "docker" ];
+
+  # networking.hosts = {
+  #   "127.0.0.1" = [
+  #     "howtohomelab.fyi"
+  #   ];
+  # };
 
   environment = {
     systemPackages = with pkgs; [

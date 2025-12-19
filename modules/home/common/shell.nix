@@ -89,13 +89,6 @@
         sudo mount -a
       }
 
-      function makerole() {
-        mkdir -p "roles/$1/tasks"
-        mkdir -p "roles/$1/defaults"
-        touch "roles/$1/tasks/main.yml"
-        touch "roles/$1/defaults/main.yml"
-      }
-
       function pyvenv() {
         python3 -m venv .venv
         source .venv/bin/activate
