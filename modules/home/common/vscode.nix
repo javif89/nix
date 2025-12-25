@@ -63,8 +63,8 @@
         {
           name = "claude-code";
           publisher = "anthropic";
-          version = "2.0.58";
-          sha256 = "/bMiwaYdJHDiSvCsLZsQQmiwbgK3knbeSoYyXFnzzuI=";
+          version = "2.0.75";
+          sha256 = "Ah3/N1nUgZQZn572zUPI4cn8r3x08x3Zz3Au1W/2Y5U=";
         }
         {
           name = "vscode-just";
