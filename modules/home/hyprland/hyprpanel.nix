@@ -42,30 +42,30 @@ in
     enable = true;
     settings = {
       bar = {
-        layouts = {
-          "0" = {
-            left = [
-              "dashboard"
-              "workspaces"
-              "cpu"
-              "ram"
-              "systray"
-            ];
-            middle = [
-              "clock"
-            ];
-            right = [
-              "media"
-              "volume"
-              "network"
-              "notifications"
-            ];
-          };
-        };
-      };
+        launcher.autoDetectIcon = true;
+        workspaces.show_icons = true;
 
-      bar.launcher.autoDetectIcon = true;
-      bar.workspaces.show_icons = true;
+        # layouts = {
+        #   "0" = {
+        #     left = [
+        #       "dashboard"
+        #       "workspaces"
+        #       "cpu"
+        #       "ram"
+        #       "systray"
+        #     ];
+        #     middle = [
+        #       "clock"
+        #     ];
+        #     right = [
+        #       "media"
+        #       "volume"
+        #       "network"
+        #       "notifications"
+        #     ];
+        #   };
+        # };
+      };
 
       menus.clock = {
         time = {

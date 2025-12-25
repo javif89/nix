@@ -19,7 +19,7 @@
 
   home = {
     sessionVariables = {
-      NIXOS_OZON_WL = "1";
+      NIXOS_OZONE_WL = "1";
 
       HYPR_PLUGIN_DIR = pkgs.symlinkJoin {
         name = "hyprland-plugins";
@@ -61,6 +61,7 @@
   wayland.windowManager.hyprland = {
 
     enable = true;
+    systemd.enable = true;
 
     plugins = with pkgs.hyprlandPlugins; [
       hyprexpo
@@ -95,6 +96,7 @@
       # Window rules
       windowrulev2 = [
         "opacity 0.85, class:^(Code)$"
+        "opacity 0.85, class:^(code)$"
         "opacity 0.85, class:^(Zed)$"
       ];
 
@@ -117,7 +119,7 @@
 
       exec-once = [
         # "quickshell -c hyprshell"
-        "hyprpanel"
+        # "hyprpanel"
         "hypridle"
         "systemctl --user start hyprpolkitagent"
       ];

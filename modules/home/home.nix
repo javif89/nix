@@ -43,8 +43,8 @@
       jq
 
       # Dev tools
+      devenv
       jetbrains.datagrip
-      vscode
       nixfmt # Nix formatting
       # pkgs.libsForQt5.full # QML formatting (for working on quickshell)
       claude-code

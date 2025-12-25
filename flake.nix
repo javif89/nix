@@ -2,11 +2,11 @@
   description = "Javi's computer configuration";
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprshell.url = "git+https://gitgud.foo/thegrind/hypr-shell.git";
     hyprland.url = "github:hyprwm/Hyprland";
     # waycast.url = "git+https://gitgud.foo/thegrind/waycast";
     waycast.url = "github:javif89/waycast";
@@ -86,7 +86,7 @@
         ];
 
         laptop = mkHost "laptop" [
-          ./modules/system/display-manager/sddm.nix
+          ./modules/system/display-manager/tuigreet.nix
         ];
       };
     };
