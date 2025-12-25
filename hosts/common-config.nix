@@ -157,10 +157,6 @@
     hyprland.enable = true;
     ssh = {
       startAgent = true;
-      extraConfig = "
-      Host myhost
-        Hostname gitgud.foo 
-    ";
     };
 
     # More thunar support
@@ -190,7 +186,6 @@
     useGlobalPkgs = true;
     extraSpecialArgs = {
       inherit inputs;
-      zigpkg = pkgs.zigpkgs.master;
       assets = assets;
     };
     users = {

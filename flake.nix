@@ -8,18 +8,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    # waycast.url = "git+https://gitgud.foo/thegrind/waycast";
     waycast.url = "github:javif89/waycast";
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    zig.url = "github:mitchellh/zig-overlay";
 
     my-assets = {
       url = "path:./assets";
@@ -32,7 +26,6 @@
       self,
       nixpkgs,
       my-assets,
-      zig,
       ...
     }@inputs:
     let
@@ -41,7 +34,6 @@
       # Common overlays for all hosts
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
-        inputs.zig.overlays.default
         inputs.waycast.overlays.default
       ];
 

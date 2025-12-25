@@ -28,8 +28,6 @@
     stateVersion = "25.05"; # Home manager version. Do not update carelessly
     packages = with pkgs; [
       # Basics
-      quickshell
-      zoom-us
       obsidian
       kdePackages.kdenlive
       ffmpeg
@@ -46,49 +44,21 @@
       devenv
       jetbrains.datagrip
       nixfmt # Nix formatting
-      # pkgs.libsForQt5.full # QML formatting (for working on quickshell)
-      claude-code
-      codex
       xsel
       nss.tools
-      ansible
-      gh
+      claude-code
 
       # System tools
       btop
       fastfetch
-      gnumake
       dig
       lsof
 
       # Langs
-      php
-      php84Packages.composer
-      laravel
       go
-      nodejs_22
       bun
-      zls # Zig language server
       rustup
-      gcc
       pkg-config
-      python3
-
-      # Waycast stuff
-      expat
-      fontconfig
-      freetype
-      libGL
-      xorg.libX11
-      xorg.libXcursor
-      xorg.libXi
-      xorg.libXrandr
-      wayland
-      libxkbcommon
-      vulkan-loader
-
-      # Game dev stuff
-      ldtk
     ];
 
     sessionVariables = {
@@ -147,24 +117,6 @@
       templates = "${config.home.homeDirectory}/Templates";
       videos = "${config.home.homeDirectory}/Videos";
     };
-
-    # TODO: Move the http handler to a browser.nix
-    #   # File/app associations
-    #   mimeApps = {
-    #     enable = true;
-    #     defaultApplications = {
-    #       "text/html" = "brave.desktop";
-    #       "x-scheme-handler/http" = "brave.desktop";
-    #       "x-scheme-handler/https" = "brave.desktop";
-    #       "x-scheme-handler/about" = "brave.desktop";
-    #       "x-scheme-handler/unknown" = "brave.desktop";
-    #       "application/pdf" = "org.gnome.Evince.desktop";
-    #       "text/plain" = "code.desktop";
-    #       "application/json" = "code.desktop";
-    #       "application/javascript" = "code.desktop";
-    #       "text/x-php" = "code.desktop";
-    #     };
-    #   };
   };
 
   # Let Home Manager install and manage itself.

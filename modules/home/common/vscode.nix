@@ -3,7 +3,6 @@
   pkgs,
   lib,
   inputs,
-  zigpkg,
   ...
 }:
 
@@ -16,20 +15,20 @@
     profiles.default.extensions =
       with pkgs.vscode-extensions;
       [
+        # Theming
+        catppuccin.catppuccin-vsc-icons
+        pkief.material-icon-theme
         # Misc
         vscodevim.vim
         eamodio.gitlens
         christian-kohler.path-intellisense
-        catppuccin.catppuccin-vsc-icons
         foxundermoon.shell-format
         gruntfuggly.todo-tree
-        jdinhlife.gruvbox
-        redhat.ansible
-        redhat.vscode-yaml
         shd101wyy.markdown-preview-enhanced
         ms-vsliveshare.vsliveshare
-        pkief.material-icon-theme
-        tamasfe.even-better-toml
+        # Ansible
+        redhat.ansible
+        redhat.vscode-yaml
         # Haskell
         haskell.haskell
         justusadam.language-haskell
@@ -50,24 +49,23 @@
         ms-python.vscode-pylance
         # Rust
         rust-lang.rust-analyzer
-        # Zig
-        # ziglang.vscode-zig
-        # C++
-        ms-vscode.cpptools
-        ms-vscode.cmake-tools
-        # delgan.qml-format
+        tamasfe.even-better-toml
         # Nix
         mkhl.direnv
         jnoortheen.nix-ide
         # adpyke.vscode-sql-formatter
         # adrianwilczynski.alpine-js-intellisense
-        # anthropic.claude-code
         # cierra.livewire-vscode
         # neilbrayfield.php-docblocker
-        # zignd.html-css-class-completion
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
+        {
+          name = "claude-code";
+          publisher = "anthropic";
+          version = "2.0.58";
+          sha256 = "/bMiwaYdJHDiSvCsLZsQQmiwbgK3knbeSoYyXFnzzuI=";
+        }
         {
           name = "vscode-just";
           publisher = "kokakiwi";
@@ -104,31 +102,6 @@
           version = "1.37.0";
           sha256 = "q5CTRj746404yM9mhOWYAGTzt/8CJ7Fx4QUQSJ+LdLs=";
         }
-        {
-          name = "vscode-antlers";
-          publisher = "stillat-llc";
-          version = "2.6.22";
-          sha256 = "3JtT5AxtbxciivfG6JaUYNPL74+8ydhDeB7SCE/92ko=";
-        }
-        # Qt Extension Pack
-        {
-          name = "qt-qml";
-          publisher = "TheQtCompany";
-          version = "1.7.0";
-          sha256 = "QjfvZIcE4LcJU93YiYN/zykEluHtR7zVOwYiPL0k+cQ=";
-        }
-        {
-          name = "qt-ui";
-          publisher = "TheQtCompany";
-          version = "1.7.0";
-          sha256 = "XDOIyCZIUYPGfcszZMUkR9MHH+zrXZgympKNhcQwITY=";
-        }
-        {
-          name = "qt-core";
-          publisher = "TheQtCompany";
-          version = "1.7.0";
-          sha256 = "2413vMpvxSYBKpaD14sMgI92W8NtCYa/sJ7PZO62WfY=";
-        }
       ];
 
     # User settings
@@ -155,6 +128,9 @@
       "[astro]" = {
         "editor.formatOnSave" = false;
       };
+      "[vue]" = {
+        "editor.defaultFormatter" = "Vue.volar";
+      };
       "[dockerfile]" = {
         "editor.formatOnSave" = false;
         "editor.formatOnPaste" = false;
@@ -172,6 +148,7 @@
         "blade" = "html";
         "templ" = "html";
         "markdown" = "html";
+        "mdc" = "html";
       };
       "explorer.openEditors.visible" = 0;
       "editor.tabCompletion" = "on";
@@ -240,19 +217,12 @@
       "editor.gotoLocation.multipleTypeDefinitions" = "goto";
       "editor.cursorSurroundingLines" = 200;
       "workbench.editor.pinnedTabsOnSeparateRow" = true;
-      "C_Cpp.default.compileCommands" = "\${workspaceFolder}/build/compile_commands.json";
-      "C_Cpp.default.configurationProvider" = "ms-vscode.cmake-tools";
       # Rust Analyzer
       "rust-analyzer.inlayHints.chainingHints.enable" = false;
       "rust-analyzer.inlayHints.closingBraceHints.enable" = false;
       "rust-analyzer.inlayHints.parameterHints.enable" = false;
       "rust-analyzer.inlayHints.typeHints.enable" = false;
       "rust-analyzer.inlayHints.closureStyle" = "hide";
-      # Antlers (Statamic)
-      "antlersLanguageServer.languageVersion" = "runtime";
-      "[antlers]" = {
-        "editor.defaultFormatter" = "html";
-      };
       "window.menuBarVisibility" = "compact";
       "vim.leader" = "<space>";
       "vim.normalModeKeyBindings" = [
@@ -313,18 +283,9 @@
       "[sql]" = {
         "editor.formatOnSave" = false;
       };
-      "svelte.enable-ts-plugin" = true;
       "workbench.sideBar.location" = "right";
       "workbench.panel.defaultLocation" = "right";
       "terminal.integrated.stickyScroll.enabled" = false;
-      "zig.zls.enabled" = "on";
-      "zig.path" = "${zigpkg}/bin/zig";
-      "zig.zls.path" = "${pkgs.zls}/bin/zls";
-      "zig.zls.zigLibPath" = "${zigpkg}/lib";
-      "zig.zls.completionLabelDetails" = false;
-      "zig.zls.enableArgumentPlaceholders" = false;
-      "zig.zls.inlayHintsShowParameterName" = false;
-      "zig.zls.inlayHintsShowVariableTypeHints" = false;
     };
 
     # Keybindings
