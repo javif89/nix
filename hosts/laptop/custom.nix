@@ -101,6 +101,7 @@
             "media"
             "volume"
             "network"
+            "bluetooth"
             "notifications"
             "battery"
           ];

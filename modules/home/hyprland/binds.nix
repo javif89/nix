@@ -10,6 +10,7 @@
     "$mod" = "SUPER";
     "$browser" = "brave";
     "$terminal" = "kitty";
+    "$editor" = "zeditor -n";
     "$file_browser" = "thunar";
     "$webapp" = "$browser --new-window --app=";
 
@@ -29,7 +30,7 @@
       "$mod SHIFT, o, exec, $browser"
       "$mod SHIFT, p, exec, $browser --incognito"
       "$mod, e, exec, $file_browser"
-      "$mod SHIFT, n, exec, code ~/nix"
+      "$mod SHIFT, n, exec, $editor ~/nix"
       "$mod SHIFT, ESC, exec, $terminal --start-as=normal -- bash -ic 'btop'"
       # "$mod ALT, p, exec, $terminal --start-as=normal -- bash -ic 'proj'"
 

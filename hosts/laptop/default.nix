@@ -45,4 +45,11 @@
     OZONE_PLATFORM = "wayland";
     OZONE_PLATFORM_HINT = "auto";
   };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+
+  services.blueman.enable = true; # recommended
 }
