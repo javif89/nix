@@ -52,4 +52,16 @@
   };
 
   services.blueman.enable = true; # recommended
+
+  programs.ssh.extraConfig = "
+    Host myhost
+      Hostname gitgud.foo
+    Host gitgud.boo
+      User git
+      Port 22
+      PubkeyAuthentication yes
+      ForwardAgent yes
+      IdentitiesOnly yes
+      IdentityFile ~/.ssh/id_gitgud_key
+  ";
 }
