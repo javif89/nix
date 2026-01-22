@@ -98,6 +98,8 @@
         "g v" = "editor::GoToDefinitionSplit";
         "g d" = "editor::GoToDefinition";
         "g h" = "editor::ShowSignatureHelp";
+        "ctrl-k" = "git::Commit";
+        "ctrl-shift-k" = "git::Push";
       };
     }
     {

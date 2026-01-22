@@ -11,7 +11,7 @@
     enable = true;
     settings = {
       plugins.projects = {
-        open_command = "code -n {path}";
+        open_command = "zeditor -n {path}";
         search_paths = [
           "/home/javi/projects"
         ];
