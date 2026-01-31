@@ -21,6 +21,7 @@
       "dockerfile"
       "json"
       "markdown"
+      "sql"
     ];
 
     # LSP / tools (instead of VSCode extensions)
