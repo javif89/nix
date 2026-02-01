@@ -11,7 +11,7 @@
     "$browser" = "brave";
     "$terminal" = "kitty";
     "$editor" = "zeditor -n";
-    "$file_browser" = "thunar";
+    "$file_browser" = "nautilus";
     "$webapp" = "$browser --new-window --app=";
 
     binds = {

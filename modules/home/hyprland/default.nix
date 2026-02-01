@@ -95,8 +95,7 @@
 
       # Window rules
       windowrulev2 = [
-        "opacity 0.85, class:^(Code)$"
-        "opacity 0.85, class:^(code)$"
+        "opacity 0.9, class:^(Code)$"
         "opacity 0.85, class:^(Zed)$"
       ];
 
@@ -105,6 +104,10 @@
         "blur, Waycast"
         "noanim, gtk4-layer-shell"
       ];
+
+      animations = {
+        animation = "workspaces, 1, 2.5, default";
+      };
 
       decoration = {
         blur = {

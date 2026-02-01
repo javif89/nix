@@ -9,7 +9,6 @@
 {
   imports = [
     ../common-config.nix
-    ../../modules/system/nix-valet.nix
     ../../modules/system/device-management/logitech.nix
     ./hyprland/monitors.nix
     ./hardware-configuration.nix
@@ -22,9 +21,39 @@
     ];
   };
 
+  networking = {
+    # Ensure resolv.conf points to systemd-resolved
+    resolvconf.enable = false;
+    networkmanager = {
+      # Allow DHCP DNS through for homelab purposes
+      dns = "systemd-resolved";
+    };
+  };
+
+  services.resolved = {
+    enable = true;
+    fallbackDns = [ ];
+    domains = [ ];
+  };
+
+  # -- Nautilus setup --
+  services.gvfs.enable = true;
+  services.udisks2.enable = true;
+  nixpkgs.overlays = [
+    (final: prev: {
+      nautilus = prev.nautilus.overrideAttrs (nprev: {
+        buildInputs =
+          nprev.buildInputs
+          ++ (with pkgs.gst_all_1; [
+            gst-plugins-good
+            gst-plugins-bad
+          ]);
+      });
+    })
+  ];
+  # -- End nautilus setup --
+
   programs.ssh.extraConfig = "
-    Host myhost
-      Hostname gitgud.foo 
     Host gitgud.boo
       HostName 10.89.0.102
       User git
@@ -64,6 +93,7 @@
 
   environment = {
     systemPackages = with pkgs; [
+      nautilus
       pkgs.ntfs3g
       obs-studio
     ];

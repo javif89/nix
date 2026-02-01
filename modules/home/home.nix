@@ -34,11 +34,16 @@
       baobab # Disk usage
       gparted
 
+      zoom-us
+
       # Terminal tools
       ripgrep
       bat
       eza
       jq
+
+      # Homelab management
+      kubectl
 
       # Dev tools
       devenv

@@ -16,11 +16,11 @@
   # Media Viewers
   home.packages = with pkgs; [
     # *** File Manager ***
-    xfce.thunar
-    xfce.thunar-volman # Removable drive support
-    xfce.thunar-media-tags-plugin
-    # Essential thumbnail generators
-    xfce.tumbler # Thunar's thumbnail service
+    # xfce.thunar
+    # xfce.thunar-volman # Removable drive support
+    # xfce.thunar-media-tags-plugin
+    # # Essential thumbnail generators
+    # xfce.tumbler # Thunar's thumbnail service
     ffmpegthumbnailer # Video thumbnails
     libgsf # Office document thumbnails
     poppler # PDF thumbnails

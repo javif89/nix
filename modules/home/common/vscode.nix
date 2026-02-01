@@ -26,9 +26,10 @@
         gruntfuggly.todo-tree
         shd101wyy.markdown-preview-enhanced
         ms-vsliveshare.vsliveshare
-        # Ansible
+        # Homelab Related
         redhat.ansible
         redhat.vscode-yaml
+        hashicorp.terraform
         # Haskell
         haskell.haskell
         justusadam.language-haskell
@@ -65,6 +66,12 @@
           publisher = "anthropic";
           version = "2.0.75";
           sha256 = "Ah3/N1nUgZQZn572zUPI4cn8r3x08x3Zz3Au1W/2Y5U=";
+        }
+        {
+          name = "sqlite-viewer";
+          publisher = "qwtel";
+          version = "25.12.3";
+          sha256 = "L3CKzTWpgknGupEnF7dt70tS8YEhElVm2TzzAOJsoSc=";
         }
         {
           name = "vscode-just";
