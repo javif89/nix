@@ -12,6 +12,7 @@
     ../../modules/system/device-management/logitech.nix
     ./hyprland/monitors.nix
     ./hardware-configuration.nix
+    ./custom.nix
   ];
 
   # Mount second hard drive
@@ -32,8 +33,12 @@
 
   services.resolved = {
     enable = true;
-    fallbackDns = [ ];
-    domains = [ ];
+    settings = {
+      Resolve = {
+        domains = [ ];
+        fallbackDns = [ ];
+      };
+    };
   };
 
   # -- Nautilus setup --

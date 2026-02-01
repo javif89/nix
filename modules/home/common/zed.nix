@@ -45,6 +45,8 @@
       # Vim Settings
       vim_mode = true;
       vertical_scroll_margin = 20;
+      ui_font_size = lib.mkForce 18;
+      buffer_font_size = lib.mkForce 18;
       # Other
       load_direnv = "shell_hook";
       tab_bar = {

@@ -29,7 +29,6 @@
     packages = with pkgs; [
       # Basics
       obsidian
-      kdePackages.kdenlive
       ffmpeg
       baobab # Disk usage
       gparted

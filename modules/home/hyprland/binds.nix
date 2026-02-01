@@ -10,7 +10,7 @@
     "$mod" = "SUPER";
     "$browser" = "brave";
     "$terminal" = "kitty";
-    "$editor" = "zeditor -n";
+    "$editor" = "code -n";
     "$file_browser" = "nautilus";
     "$webapp" = "$browser --new-window --app=";
 

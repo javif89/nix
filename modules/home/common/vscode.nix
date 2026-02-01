@@ -61,12 +61,12 @@
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
-        {
-          name = "claude-code";
-          publisher = "anthropic";
-          version = "2.0.75";
-          sha256 = "Ah3/N1nUgZQZn572zUPI4cn8r3x08x3Zz3Au1W/2Y5U=";
-        }
+        # {
+        #   name = "claude-code";
+        #   publisher = "anthropic";
+        #   version = "2.0.75";
+        #   sha256 = "Ah3/N1nUgZQZn572zUPI4cn8r3x08x3Zz3Au1W/2Y5U=";
+        # }
         {
           name = "sqlite-viewer";
           publisher = "qwtel";

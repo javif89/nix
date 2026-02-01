@@ -2,15 +2,16 @@
   config,
   pkgs,
   inputs,
+  assets,
   ...
 }:
 
 {
   imports = [
     ./binds.nix
-    ./hyprpaper.nix
     ./hyprpanel.nix
     ./hyprlock.nix
+    ./swaybg.nix
     ./wofi.nix
     ./desktop-env.nix
     ./screenshots.nix
@@ -74,10 +75,6 @@
         repeat_rate = 20;
       };
 
-      # monitor = [
-      #   "DP-5, 3440x1440@179.99, 0x0, 1"
-      # ];
-
       general = {
         layout = "master";
         gaps_out = 0;
@@ -121,8 +118,6 @@
       };
 
       exec-once = [
-        # "quickshell -c hyprshell"
-        # "hyprpanel"
         "hypridle"
         "systemctl --user start hyprpolkitagent"
       ];
