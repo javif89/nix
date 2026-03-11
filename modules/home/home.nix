@@ -51,6 +51,11 @@
       xsel
       nss.tools
       claude-code
+      codex
+
+      inkscape
+      noisetorch
+      teamspeak6-client
 
       # System tools
       btop
@@ -61,7 +66,6 @@
       # Langs
       go
       bun
-      rustup
       pkg-config
     ];
 

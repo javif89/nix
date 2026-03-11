@@ -114,6 +114,7 @@
     # User settings
     profiles.default.userSettings = {
       # Disable the fucking copilot chat
+      "update.mode" = "none";
       "github.copilot.chat.showChatPanel" = false;
       "github.copilot.enable" = false;
       "window.titleBarStyle" = "custom";
@@ -124,11 +125,6 @@
       "editor.snippetSuggestions" = "top";
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
-      "qt-qml.qmlls.useQmlImportPathEnvVar" = true;
-      "[qml]" = {
-        "editor.defaultFormatter" = "Delgan.qml-format";
-        "editor.formatOnSave" = true;
-      };
       "[yaml]" = {
         "editor.formatOnSave" = false;
       };
@@ -414,6 +410,16 @@
       {
         "key" = "ctrl+shift+\\";
         "command" = "workbench.action.toggleAuxiliaryBar";
+      }
+      {
+        "key" = "ctrl+shift+h";
+        "command" = "workbench.action.terminal.focusPreviousPane";
+        "when" = "terminalFocus";
+      }
+      {
+        "key" = "ctrl+shift+l";
+        "command" = "workbench.action.terminal.focusNextPane";
+        "when" = "terminalFocus";
       }
     ];
   };

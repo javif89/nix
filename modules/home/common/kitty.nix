@@ -7,6 +7,7 @@
 let
   kittyConfig = ''
     font_size 16.0
+    cursor_trail 200
 
     background_opacity 0.9
     background_blur 1

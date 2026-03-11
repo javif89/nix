@@ -9,6 +9,7 @@ let
     "javi"
     "xrandr"
     "media"
+    "fileshare"
   ];
 
   configureShare = share: {

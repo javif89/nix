@@ -37,11 +37,11 @@
           "eDP-1, 2560x1600@165.00, 0x0, 1.6"
         ];
 
-        windowrulev2 = lib.mkForce [
-          "opacity 0.95, class:^(Code)$"
-          "opacity 0.95, class:^(code)$"
-          "opacity 0.95, class:^(Zed)$"
-        ];
+        # windowrulev2 = lib.mkForce [
+        #   "opacity 0.95, class:^(Code)$"
+        #   "opacity 0.95, class:^(code)$"
+        #   "opacity 0.95, class:^(Zed)$"
+        # ];
 
         gesture = [
           "3, horizontal, workspace"

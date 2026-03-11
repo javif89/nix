@@ -91,15 +91,13 @@
       ];
 
       # Window rules
-      windowrulev2 = [
-        "opacity 0.9, class:^(Code)$"
-        "opacity 0.85, class:^(Zed)$"
+      windowrule = [
+        "match:class code, opacity 0.9"
       ];
 
       layerrule = [
-        "noanim, Waycast"
-        "blur, Waycast"
-        "noanim, gtk4-layer-shell"
+        "no_anim on, match:namespace Waycast"
+        "blur on, match:namespace Waycast"
       ];
 
       animations = {

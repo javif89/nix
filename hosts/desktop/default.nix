@@ -59,6 +59,7 @@
   # -- End nautilus setup --
 
   programs.ssh.extraConfig = "
+    Include %d/.ssh/homelab_hosts
     Host gitgud.boo
       HostName 10.89.0.102
       User git
@@ -67,6 +68,12 @@
       ForwardAgent yes
       IdentitiesOnly yes
       IdentityFile ~/.ssh/id_gitea_key
+    Host 10.89.0.3
+      IdentitiesOnly yes
+      IdentityFile ~/.ssh/brocade_key
+      KexAlgorithms +diffie-hellman-group1-sha1
+      PubkeyAcceptedKeyTypes=+ssh-rsa
+      HostKeyAlgorithms=+ssh-rsa
   ";
 
   fileSystems."/home/javi/working-files" = {
@@ -96,8 +103,26 @@
   #   ];
   # };
 
+  networking.wireguard.interfaces.wg0 = {
+    ips = [ "10.101.0.89/24" ];
+    privateKeyFile = "/etc/wireguard/homelab.priv";
+    peers = [
+      {
+        publicKey = "SMqLB0joNNqx21PG2VBSPmKKY3XAdwTJLiUnuwbABAA=";
+        endpoint = "192.3.63.170:51820";
+        allowedIPs = [ "10.101.0.0/24" ];
+        persistentKeepalive = 25;
+      }
+    ];
+  };
+
+  programs.nix-ld.enable = true;
+
+  networking.firewall.checkReversePath = false;
   environment = {
     systemPackages = with pkgs; [
+      wireguard-tools
+      protonvpn-gui
       nautilus
       pkgs.ntfs3g
       obs-studio
