@@ -32,6 +32,8 @@
       ffmpeg
       baobab # Disk usage
       gparted
+      firefox
+      blanket
 
       zoom-us
 
@@ -67,6 +69,7 @@
       go
       bun
       pkg-config
+      rustup
     ];
 
     sessionVariables = {

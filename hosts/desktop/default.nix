@@ -13,6 +13,7 @@
     ./hyprland/monitors.nix
     ./hardware-configuration.nix
     ./custom.nix
+    ./caddy-local.nix
   ];
 
   # Mount second hard drive
