@@ -9,6 +9,7 @@
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
+    dotDir = config.home.homeDirectory;
 
     # Shell aliases (equivalent to your script functions)
     shellAliases = {

@@ -29,18 +29,16 @@
         # Homelab Related
         redhat.ansible
         redhat.vscode-yaml
-        hashicorp.terraform
         # Haskell
-        haskell.haskell
-        justusadam.language-haskell
+        # haskell.haskell
+        # justusadam.language-haskell
         # PHP
         bmewburn.vscode-intelephense-client
         # Html/Front End Support
         bradlc.vscode-tailwindcss
         formulahendry.auto-close-tag
         formulahendry.auto-rename-tag
-        svelte.svelte-vscode
-        vue.volar
+        astro-build.astro-vscode
         # Go
         golang.go
         mikestead.dotenv
@@ -54,21 +52,9 @@
         # Nix
         mkhl.direnv
         jnoortheen.nix-ide
-        # Various JS things
-        astro-build.astro-vscode
-        # adpyke.vscode-sql-formatter
-        # adrianwilczynski.alpine-js-intellisense
-        # cierra.livewire-vscode
-        # neilbrayfield.php-docblocker
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
-        {
-          name = "vscode-just";
-          publisher = "kokakiwi";
-          version = "2.1.0";
-          sha256 = "1ncWDFG111HJ+PmA6k011qgC4uWMOs/wiE4F0A48UtY=";
-        }
         {
           name = "base16-tinted-themes";
           publisher = "TintedTheming";
@@ -182,7 +168,7 @@
         ".phpunit.result.cache" = true;
       };
       "scm.diffDecorations" = "none";
-      "editor.hover.enabled" = false;
+      "editor.hover.enabled" = "off";
       "editor.matchBrackets" = "never";
       "workbench.tips.enabled" = false;
       "editor.colorDecorators" = false;
