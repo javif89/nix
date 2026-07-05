@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    waycast.url = "git+https://gitgud.boo/javif89/waycast";
+    waycast.url = "git+https://gitgud.boo/waycasthq/waycast";
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
