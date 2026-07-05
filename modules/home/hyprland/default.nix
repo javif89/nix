@@ -21,13 +21,6 @@
   home = {
     sessionVariables = {
       NIXOS_OZONE_WL = "1";
-
-      HYPR_PLUGIN_DIR = pkgs.symlinkJoin {
-        name = "hyprland-plugins";
-        paths = with pkgs.hyprlandPlugins; [
-          hyprexpo
-        ];
-      };
     };
 
     packages = with pkgs; [
@@ -62,11 +55,8 @@
   wayland.windowManager.hyprland = {
 
     enable = true;
-    systemd.enable = true;
-
-    plugins = with pkgs.hyprlandPlugins; [
-      hyprexpo
-    ];
+    systemd.enable = false;
+    configType = "hyprlang";
 
     settings = {
 
@@ -116,7 +106,6 @@
       };
 
       exec-once = [
-        "hypridle"
         "systemctl --user start hyprpolkitagent"
       ];
     };

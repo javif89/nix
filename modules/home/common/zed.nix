@@ -36,7 +36,7 @@
       # Python
       pyright
       # Nodejs
-      nodePackages_latest.typescript-language-server
+      typescript-language-server
       # PHP
       phpactor
     ];

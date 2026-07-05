@@ -34,8 +34,11 @@
       gparted
       firefox
       blanket
+      cheese # Camera
 
+      # Communication
       zoom-us
+      signal-desktop
 
       # Terminal tools
       ripgrep
@@ -56,7 +59,6 @@
       codex
 
       inkscape
-      noisetorch
       teamspeak6-client
 
       # System tools

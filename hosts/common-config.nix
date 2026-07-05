@@ -105,6 +105,7 @@
   environment = {
     systemPackages = with pkgs; [
       brave
+      nixd
       git
       openssh
       openssl
@@ -154,7 +155,11 @@
   };
 
   programs = {
-    hyprland.enable = true;
+    hyprland = {
+      enable = true;
+      withUWSM = true;
+    };
+
     ssh = {
       startAgent = true;
     };

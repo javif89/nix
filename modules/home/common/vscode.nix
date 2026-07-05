@@ -54,6 +54,8 @@
         # Nix
         mkhl.direnv
         jnoortheen.nix-ide
+        # Various JS things
+        astro-build.astro-vscode
         # adpyke.vscode-sql-formatter
         # adrianwilczynski.alpine-js-intellisense
         # cierra.livewire-vscode
@@ -61,29 +63,11 @@
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
-        # {
-        #   name = "claude-code";
-        #   publisher = "anthropic";
-        #   version = "2.0.75";
-        #   sha256 = "Ah3/N1nUgZQZn572zUPI4cn8r3x08x3Zz3Au1W/2Y5U=";
-        # }
-        {
-          name = "sqlite-viewer";
-          publisher = "qwtel";
-          version = "25.12.3";
-          sha256 = "L3CKzTWpgknGupEnF7dt70tS8YEhElVm2TzzAOJsoSc=";
-        }
         {
           name = "vscode-just";
           publisher = "kokakiwi";
           version = "2.1.0";
           sha256 = "1ncWDFG111HJ+PmA6k011qgC4uWMOs/wiE4F0A48UtY=";
-        }
-        {
-          name = "mdc";
-          publisher = "nuxt";
-          version = "0.4.2";
-          sha256 = "KWwz7fq/cHtvcy9QvetbZ3p+ODqqQlzshL8oeK5CekI=";
         }
         {
           name = "base16-tinted-themes";

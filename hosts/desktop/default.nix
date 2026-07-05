@@ -117,16 +117,25 @@
     ];
   };
 
-  programs.nix-ld.enable = true;
+  programs = {
+    nix-ld.enable = true;
+    noisetorch.enable = true;
+  };
 
   networking.firewall.checkReversePath = false;
   environment = {
     systemPackages = with pkgs; [
       wireguard-tools
-      protonvpn-gui
+      proton-vpn
       nautilus
       pkgs.ntfs3g
       obs-studio
+      kdePackages.kdenlive
     ];
   };
+
+  networking.extraHosts = ''
+    127.0.0.1 static.test
+    127.0.0.1 static2.test
+  '';
 }

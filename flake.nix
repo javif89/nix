@@ -8,7 +8,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprland.url = "github:hyprwm/Hyprland";
-    waycast.url = "github:javif89/waycast";
+    waycast.url = "git+https://gitgud.boo/javif89/waycast";
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,7 +34,6 @@
       # Common overlays for all hosts
       overlays = [
         inputs.neovim-nightly-overlay.overlays.default
-        inputs.waycast.overlays.default
       ];
 
       # Helper function to create a host configuration

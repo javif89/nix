@@ -10,6 +10,7 @@ let
     "xrandr"
     "media"
     "fileshare"
+    "music"
   ];
 
   configureShare = share: {

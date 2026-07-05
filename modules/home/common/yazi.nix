@@ -7,6 +7,7 @@
 {
   programs.yazi = {
     enable = true;
+    shellWrapperName = "yy";
     keymap = {
       manager.prepend_keymap = [
         {
