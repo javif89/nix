@@ -54,7 +54,7 @@
       "$mod, f, fullscreen, 0"
       "$mod, v, togglefloating, active"
       # "$mod, SPACE, exec, wofi --show drun"
-      "$mod, SPACE, exec, waycast"
+      "$mod, SPACE, exec, waycast show"
       "$mod SHIFT, SPACE, exec, /home/javi/projects/waycast/target/release/waycast"
 
       "$mod, d, exec, ${pkgs.wofi-emoji}/bin/wofi-emoji"

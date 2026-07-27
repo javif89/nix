@@ -48,6 +48,7 @@
 
       # Homelab management
       kubectl
+      thegrind.uncloud
 
       # Dev tools
       devenv
@@ -56,10 +57,6 @@
       xsel
       nss.tools
       claude-code
-      codex
-
-      inkscape
-      teamspeak6-client
 
       # System tools
       btop

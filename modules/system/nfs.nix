@@ -11,6 +11,7 @@ let
     "media"
     "fileshare"
     "music"
+    "prod-cluster"
   ];
 
   configureShare = share: {

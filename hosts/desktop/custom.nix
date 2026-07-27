@@ -46,26 +46,30 @@
     };
 
     programs = {
-      hyprpanel.settings.bar.layouts = {
-        "0" = {
-          left = [
-            "dashboard"
-            "workspaces"
-            "cpu"
-            "ram"
-            "systray"
-          ];
-          middle = [
-            "clock"
-          ];
-          right = [
-            "media"
-            "volume"
-            "network"
-            "notifications"
-          ];
-        };
-      };
+      # DEPRECATED:
+      # 1. I no longer have laptop so this doesn't have
+      # to be in "custom.nix"
+      # 2. Hyprpanel is deprecated and is now wayle
+      #   hyprpanel.settings.bar.layouts = {
+      #     "0" = {
+      #       left = [
+      #         "dashboard"
+      #         "workspaces"
+      #         "cpu"
+      #         "ram"
+      #         "systray"
+      #       ];
+      #       middle = [
+      #         "clock"
+      #       ];
+      #       right = [
+      #         "media"
+      #         "volume"
+      #         "network"
+      #         "notifications"
+      #       ];
+      #     };
+      #   };
     };
   };
 }

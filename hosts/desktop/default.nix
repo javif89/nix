@@ -62,9 +62,9 @@
   programs.ssh.extraConfig = "
     Include %d/.ssh/homelab_hosts
     Host gitgud.boo
-      HostName 10.89.0.102
+      HostName 10.89.0.82
       User git
-      Port 222
+      Port 2222
       PubkeyAuthentication yes
       ForwardAgent yes
       IdentitiesOnly yes

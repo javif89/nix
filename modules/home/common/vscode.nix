@@ -84,6 +84,7 @@
     # User settings
     profiles.default.userSettings = {
       # Disable the fucking copilot chat
+      "chat.disableAIFeatures" = true;
       "update.mode" = "none";
       "github.copilot.chat.showChatPanel" = false;
       "github.copilot.enable" = false;

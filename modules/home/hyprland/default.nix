@@ -9,7 +9,8 @@
 {
   imports = [
     ./binds.nix
-    ./hyprpanel.nix
+    # ./hyprpanel.nix # Hyprpanel is now "Wayle"
+    ./wayle.nix
     ./hyprlock.nix
     ./swaybg.nix
     ./wofi.nix
