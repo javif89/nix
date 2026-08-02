@@ -39,6 +39,7 @@
         formulahendry.auto-close-tag
         formulahendry.auto-rename-tag
         astro-build.astro-vscode
+        vue.volar
         # Go
         golang.go
         mikestead.dotenv

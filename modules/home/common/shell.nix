@@ -19,7 +19,7 @@
       rbl = "git add . && sudo nixos-rebuild switch --flake $HOME/nix#laptop";
 
       eza = "eza";
-      ls = "eza -lh --group-directories-first --icons";
+      ls = "eza -lh --group-directories-first --icons=always";
       cat = "bat";
       bat = "bat";
 
@@ -65,34 +65,10 @@
 
     # Additional bash configuration
     initContent = ''
-      function pape() {
-        hyprctl hyprpaper preload $1 
-        hyprctl hyprpaper wallpaper ", $1"
-      }
-      # Open something in the projects folder
-      function o() {
-        cd "$HOME/projects/$1"
-      }
-
-      function proj() {
-        eza -ld $HOME/projects/* --color=never |
-          awk '{print $7}' |
-          wofi --dmenu --prompt "Open project:" | xargs -I{} code {} -n && exit
-      }
-
-      function makepasswd() {
-        openssl rand -base64 16 | clipboard
-        echo "Password copied to clipboard"
-      }
-
-      function mountnewshares() {
-        sudo systemctl daemon-reload
-        sudo mount -a
-      }
-
-      function pyvenv() {
-        python3 -m venv .venv
-        source .venv/bin/activate
+      function nixgc() {
+        nix-collect-garbage -d --delete-older-than 10d
+        sudo nix-collect-garbage -d --delete-older-than 10d
+        nix store optimise
       }
 
       function newsshkey() {

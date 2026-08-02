@@ -13,7 +13,6 @@
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     thegrind-nixpkgs.url = "git+https://gitgud.boo/thegrind/nixpkgs";
 
     my-assets = {
@@ -34,7 +33,6 @@
 
       # Common overlays for all hosts
       overlays = [
-        inputs.neovim-nightly-overlay.overlays.default
         inputs.thegrind-nixpkgs.overlays.default
       ];
 

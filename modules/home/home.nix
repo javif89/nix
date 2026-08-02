@@ -9,7 +9,6 @@
   imports = [
     ./common/git.nix
     ./common/kitty.nix
-    ./common/neovim.nix
     ./common/shell.nix
     ./common/starship.nix
     ./common/yazi.nix
@@ -49,6 +48,7 @@
       # Homelab management
       kubectl
       thegrind.uncloud
+      thegrind.static-forge
 
       # Dev tools
       devenv

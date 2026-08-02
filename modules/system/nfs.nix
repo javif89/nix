@@ -15,7 +15,7 @@ let
   ];
 
   configureShare = share: {
-    name = "/home/javi/network-shares/${share}";
+    name = "/mnt/network-shares/${share}";
     value = {
       device = "${nasIp}:${baseMnt}/${share}";
       fsType = "nfs";
@@ -23,7 +23,11 @@ let
         "x-systemd.automount"
         "noauto"
         "rw"
-        "vers=4"
+        "vers=4.2"
+        "nconnect=8"
+        "rsize=1048576"
+        "wsize=1048576"
+        "noatime"
       ];
     };
   };

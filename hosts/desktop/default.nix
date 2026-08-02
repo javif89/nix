@@ -131,6 +131,7 @@
       pkgs.ntfs3g
       obs-studio
       kdePackages.kdenlive
+      lazydocker
     ];
   };
 

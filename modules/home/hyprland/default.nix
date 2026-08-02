@@ -28,7 +28,7 @@
       # Notifications
       libnotify
       # Desktop env
-      hyprpanel
+      # hyprpanel
       hyprpolkitagent
       # Utility
       wl-clipboard
