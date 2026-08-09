@@ -17,6 +17,7 @@
     ./desktop-env.nix
     ./screenshots.nix
     ./waycast.nix
+    ./hypr-share-picker.nix
   ];
 
   home = {
@@ -84,6 +85,7 @@
       # Window rules
       windowrule = [
         "match:class code, opacity 0.9"
+        "match:title waycast-dev, no_initial_focus on"
       ];
 
       layerrule = [

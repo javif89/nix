@@ -30,7 +30,6 @@
       obsidian
       ffmpeg
       baobab # Disk usage
-      gparted
       firefox
       blanket
       cheese # Camera
@@ -44,11 +43,13 @@
       bat
       eza
       jq
+      xh
 
       # Homelab management
       kubectl
       thegrind.uncloud
       thegrind.static-forge
+      thegrind.hypr-share-picker
 
       # Dev tools
       devenv
@@ -63,6 +64,7 @@
       fastfetch
       dig
       lsof
+      gdu
 
       # Langs
       go

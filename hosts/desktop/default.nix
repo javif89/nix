@@ -132,7 +132,12 @@
       obs-studio
       kdePackages.kdenlive
       lazydocker
+      gparted
     ];
+  };
+
+  security = {
+    polkit.enable = true;
   };
 
   networking.extraHosts = ''

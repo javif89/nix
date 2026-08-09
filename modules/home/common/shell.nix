@@ -66,8 +66,8 @@
     # Additional bash configuration
     initContent = ''
       function nixgc() {
-        nix-collect-garbage -d --delete-older-than 10d
-        sudo nix-collect-garbage -d --delete-older-than 10d
+        nix-collect-garbage -d --delete-older-than 5d
+        sudo nix-collect-garbage -d --delete-older-than 5d
         nix store optimise
       }
 
