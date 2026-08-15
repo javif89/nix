@@ -10,6 +10,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscode; # or pkgs.vscodium for the open-source version
+    mutableExtensionsDir = false;
 
     # Extensions
     profiles.default.extensions =
@@ -26,12 +27,6 @@
         gruntfuggly.todo-tree
         shd101wyy.markdown-preview-enhanced
         ms-vsliveshare.vsliveshare
-        # Homelab Related
-        redhat.ansible
-        redhat.vscode-yaml
-        # Haskell
-        # haskell.haskell
-        # justusadam.language-haskell
         # PHP
         bmewburn.vscode-intelephense-client
         # Html/Front End Support
@@ -44,9 +39,9 @@
         golang.go
         mikestead.dotenv
         # Python
-        ms-python.debugpy
-        ms-python.python
-        ms-python.vscode-pylance
+        # ms-python.debugpy
+        # ms-python.python
+        # ms-python.vscode-pylance
         # Rust
         rust-lang.rust-analyzer
         tamasfe.even-better-toml
@@ -56,6 +51,12 @@
       ]
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
+        {
+          name = "livewire-sfc-support";
+          publisher = "ganyicz";
+          version = "1.0.3";
+          sha256 = "sha256-cYngEcW1D0FcuLXdGVqGZ9OEjsi8rV+7ZnQShraZT3E=";
+        }
         {
           name = "base16-tinted-themes";
           publisher = "TintedTheming";

@@ -30,7 +30,6 @@
       obsidian
       ffmpeg
       baobab # Disk usage
-      firefox
       blanket
       cheese # Camera
 
@@ -58,6 +57,9 @@
       xsel
       nss.tools
       claude-code
+      pi-coding-agent
+      opencode
+      nodejs_24
 
       # System tools
       btop
