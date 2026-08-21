@@ -189,6 +189,7 @@
   # Enable home manager
   home-manager = {
     useGlobalPkgs = true;
+    backupFileExtension = ".hm.bak";
     extraSpecialArgs = {
       inherit inputs;
       assets = assets;

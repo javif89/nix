@@ -63,12 +63,12 @@
           version = "0.27.0";
           sha256 = "7wLBwfaXEoumAfp9kK5Mv1VaGffuGdoYMGZ+ZjN9G8Q=";
         }
-        {
-          name = "vscode-laravel";
-          publisher = "laravel";
-          version = "1.0.14";
-          sha256 = "DEHr8kAGm6ShdQCThh7MUhv24Ghwg10mGDhZgUIojrY=";
-        }
+        # {
+        #   name = "vscode-laravel";
+        #   publisher = "laravel";
+        #   version = "1.0.14";
+        #   sha256 = "DEHr8kAGm6ShdQCThh7MUhv24Ghwg10mGDhZgUIojrY=";
+        # }
         {
           name = "phpstorm-snippets";
           publisher = "phiter";
