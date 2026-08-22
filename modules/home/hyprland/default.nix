@@ -8,12 +8,9 @@
 
 {
   imports = [
-    ./binds.nix
-    # ./hyprpanel.nix # Hyprpanel is now "Wayle"
+    ./config
     ./wayle.nix
-    ./hyprlock.nix
     ./swaybg.nix
-    ./wofi.nix
     ./desktop-env.nix
     ./screenshots.nix
     ./waycast.nix
@@ -55,62 +52,16 @@
   };
 
   wayland.windowManager.hyprland = {
-
     enable = true;
     systemd.enable = false;
-    configType = "hyprlang";
+    configType = "lua";
 
-    settings = {
-
-      input = {
-        repeat_delay = 200;
-        repeat_rate = 20;
-      };
-
-      general = {
-        layout = "master";
-        gaps_out = 0;
-        gaps_in = 0;
-      };
-
-      workspace = [
-        "1, persistent:true"
-        "2, persistent:true"
-        "3, persistent:true"
-        "4, persistent:true"
-        "5, persistent:true"
-        "6, persistent:true"
-      ];
-
-      # Window rules
-      windowrule = [
-        "match:class code, opacity 0.9"
-        "match:title waycast-dev, no_initial_focus on"
-      ];
-
-      layerrule = [
-        "no_anim on, match:namespace Waycast"
-        "blur on, match:namespace Waycast"
-      ];
-
-      animations = {
-        animation = "workspaces, 1, 2.5, default";
-      };
-
-      decoration = {
-        blur = {
-          enabled = false;
-          size = 8;
-          passes = 2;
-        };
-
-        active_opacity = 1.0;
-        inactive_opacity = 1.0;
-      };
-
-      exec-once = [
-        "systemctl --user start hyprpolkitagent"
-      ];
-    };
+    # TODO: Figure out a cleaner way to start this
+    # settings = {
+    #   # Window rules
+    #   exec-once = [
+    #     "systemctl --user start hyprpolkitagent"
+    #   ];
+    # };
   };
 }

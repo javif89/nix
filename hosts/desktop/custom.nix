@@ -31,18 +31,11 @@
       OZONE_PLATFORM_HINT = "auto";
     };
 
-    wayland.windowManager.hyprland = {
-      settings = {
-        monitor = [
-          "DP-5, 3440x1440@179.99, 0x0, 1"
-        ];
-
-        # windowrulev2 = lib.mkForce [
-        #   "opacity 0.95, class:^(Code)$"
-        #   "opacity 0.95, class:^(code)$"
-        #   "opacity 0.95, class:^(Zed)$"
-        # ];
-      };
+    wayland.windowManager.hyprland.settings.monitor = {
+      output = "DP-2";
+      mode = "3440x1440@179.99";
+      position = "0x0";
+      scale = 1;
     };
 
     programs = {

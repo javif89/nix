@@ -10,7 +10,6 @@
   imports = [
     ../common-config.nix
     ../../modules/system/device-management/logitech.nix
-    ./hyprland/monitors.nix
     ./hardware-configuration.nix
     ./custom.nix
     ./caddy-local.nix
