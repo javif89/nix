@@ -52,10 +52,17 @@
       ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
         # Extensions not in nixpkgs
         {
-          name = "livewire-sfc-support";
-          publisher = "ganyicz";
-          version = "1.0.3";
-          sha256 = "sha256-cYngEcW1D0FcuLXdGVqGZ9OEjsi8rV+7ZnQShraZT3E=";
+          name = "vscode-dotnet-runtime";
+          publisher = "ms-dotnettools";
+          version = "3.2.0";
+          sha256 = "DvoaWpG8qFNjGl9xVRqBvymucGm9UQ9VOMx+X7EvBUA=";
+        }
+        {
+          name = "csharp";
+          publisher = "ms-dotnettools";
+          version = "11.7.18";
+          arch = "linux-x64";
+          sha256 = "vvtDhkusfxuzV/TNWGkw7kuN0JEf3TWg/uywWsZVk9s=";
         }
         {
           name = "base16-tinted-themes";
@@ -63,23 +70,23 @@
           version = "0.27.0";
           sha256 = "7wLBwfaXEoumAfp9kK5Mv1VaGffuGdoYMGZ+ZjN9G8Q=";
         }
-        # {
-        #   name = "vscode-laravel";
-        #   publisher = "laravel";
-        #   version = "1.0.14";
-        #   sha256 = "DEHr8kAGm6ShdQCThh7MUhv24Ghwg10mGDhZgUIojrY=";
-        # }
+        {
+          name = "vscode-laravel";
+          publisher = "laravel";
+          version = "2.0.0";
+          sha256 = "sha256-tBAEtnRavj7+hMl7yJEf6wnItWxTI/v+f2TXXavRqGU=";
+        }
+        {
+          name = "laravel-blade";
+          publisher = "onecentlin";
+          version = "1.38.0";
+          sha256 = "sha256-pXiuWb313chHQe6DBtbafM8iJO18+2obyNy3oaGgcPo=";
+        }
         {
           name = "phpstorm-snippets";
           publisher = "phiter";
           version = "1.1.2";
           sha256 = "EHEzM4YKYR+2r6RVun8tSjGYDsbriBPATNwxczEuqjQ=";
-        }
-        {
-          name = "laravel-blade";
-          publisher = "onecentlin";
-          version = "1.37.0";
-          sha256 = "q5CTRj746404yM9mhOWYAGTzt/8CJ7Fx4QUQSJ+LdLs=";
         }
       ];
 
@@ -98,6 +105,14 @@
       "editor.snippetSuggestions" = "top";
       "editor.formatOnPaste" = true;
       "editor.formatOnSave" = true;
+      "[csharp]" = {
+        "editor.inlayHints.enabled" = "off";
+        "editor.codeLens" = false;
+      };
+      "[aspnetcorerazor]" = {
+        "editor.inlayHints.enabled" = "off";
+        "editor.codeLens" = false;
+      };
       "[yaml]" = {
         "editor.formatOnSave" = false;
       };
@@ -125,6 +140,8 @@
         "templ" = "html";
         "markdown" = "html";
         "mdc" = "html";
+        "aspnetcorerazor" = "html";
+        "razor" = "html";
       };
       "explorer.openEditors.visible" = 0;
       "editor.tabCompletion" = "on";
@@ -199,6 +216,8 @@
       "rust-analyzer.inlayHints.parameterHints.enable" = false;
       "rust-analyzer.inlayHints.typeHints.enable" = false;
       "rust-analyzer.inlayHints.closureStyle" = "hide";
+      # Dotnet
+      "dotnet.preferCSharpExtension" = true;
       "window.menuBarVisibility" = "compact";
       "vim.leader" = "<space>";
       "vim.normalModeKeyBindings" = [

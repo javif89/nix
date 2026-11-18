@@ -1,6 +1,6 @@
 { pkgs, assets, ... }:
 {
-  xdg.configFile."wallpaper.png".source = "${assets}/Forest 1.png";
+  xdg.configFile."wallpaper.png".source = "${assets}/forest_dark_winter.jpg";
 
   home.packages = with pkgs; [
     swaybg

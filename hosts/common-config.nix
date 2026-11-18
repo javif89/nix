@@ -111,6 +111,7 @@
       openssl
       xdg-user-dirs-gtk # This helps with Nautilus integration
       cachix
+      gcc
     ];
 
     # Set up my user icon
@@ -161,7 +162,6 @@
     };
 
     ssh = {
-      startAgent = true;
     };
 
     # More thunar support
@@ -181,7 +181,7 @@
   # Theme
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/everforest-dark-hard.yaml";
     # image = "/home/javi/Documents/wallpapers/Fantasy-Mountain.png";
     polarity = "dark";
   };

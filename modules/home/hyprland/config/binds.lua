@@ -2,7 +2,7 @@ local mod = "SUPER"
 
 local browser = "brave"
 local terminal = "kitty"
-local editor = "code -n"
+local editor = "zeditor"
 local file_browser = "nautilus"
 local webapp = browser .. "--new-window --app="
 
@@ -12,8 +12,17 @@ hl.config({
     },
 })
 
+-- Mouse bindings
+hl.bind("SUPER + mouse:272", hl.dsp.window.drag(), {
+    mouse = true,
+})
+
+hl.bind("SUPER + mouse:273", hl.dsp.window.resize(), {
+    mouse = true,
+})
+
 -- Start programs
-hl.bind(mod .. " + Q", 
+hl.bind(mod .. " + Q",
     hl.dsp.exec_cmd(terminal)
 )
 

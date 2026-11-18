@@ -12,6 +12,7 @@ let
     "fileshare"
     "music"
     "prod-cluster"
+    "uncloud"
   ];
 
   configureShare = share: {

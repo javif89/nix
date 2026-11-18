@@ -91,6 +91,37 @@
         cat "$KEY_PATH.pub" | clipboard
         echo "Key copied to clipboard"
       }
+
+      function vidpriv() {
+        mpv \
+          --no-save-position-on-quit \
+          --resume-playback=no \
+          --save-watch-history=no \
+          "$1" 
+      }
+
+      function cleant() {
+        rm -rf ~/.cache/thumbnails
+        rm -rf /tmp/yazi-1000
+      }
+
+      function lockdir() {
+        TARGET_DIR="$1"  
+        TAR_NAME="$TARGET_DIR.tar.gz"
+        tar -czf "$TAR_NAME" "$TARGET_DIR/"
+        rage -p -o "$TAR_NAME.age" "$TAR_NAME"
+        rm -rf "$TARGET_DIR"
+        rm -rf "$TAR_NAME"
+      }
+
+      function unlockdir() {
+        TARGET_DIR="$1"  
+        TAR_NAME="$TARGET_DIR.tar.gz"
+        rage -d -o "$TAR_NAME" "$TAR_NAME.age"
+        tar -xzf "$TAR_NAME"
+        rm -rf "$TAR_NAME"
+        rm -f "$TAR_NAME.age"
+      }
     '';
   };
 

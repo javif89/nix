@@ -41,6 +41,10 @@
     };
   };
 
+  # Keyring setup
+  services.gnome.gnome-keyring.enable = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
+
   # -- Nautilus setup --
   services.gvfs.enable = true;
   services.udisks2.enable = true;
@@ -96,11 +100,11 @@
 
   virtualisation.docker = {
     enable = true;
-    daemon.settings = {
-      features.cdi = true;
-    };
+    # daemon.settings = {
+    #   features.cdi = true;
+    # };
   };
-  hardware.nvidia-container-toolkit.enable = true;
+  # hardware.nvidia-container-toolkit.enable = true;
   users.users.javi.extraGroups = [ "docker" ];
 
   # networking.hosts = {
@@ -127,7 +131,17 @@
     noisetorch.enable = true;
   };
 
-  networking.firewall.checkReversePath = false;
+  networking = {
+    networkmanager = {
+      enable = true;
+      plugins = with pkgs; [
+        networkmanager-openvpn
+      ];
+    };
+
+    firewall.checkReversePath = "loose";
+  };
+
   environment = {
     systemPackages = with pkgs; [
       wireguard-tools

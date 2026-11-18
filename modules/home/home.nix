@@ -43,6 +43,7 @@
       eza
       jq
       xh
+      rage
 
       # Homelab management
       kubectl
@@ -57,9 +58,15 @@
       xsel
       nss.tools
       claude-code
+      codex
       pi-coding-agent
       opencode
       nodejs_24
+      code-cursor-fhs
+      php85
+      php85Packages.composer
+      dotnet-sdk_10
+      dotnet-aspnetcore_10
 
       # System tools
       btop
@@ -87,6 +94,7 @@
       XDG_DATA_HOME = "${config.home.homeDirectory}/.local/share";
       XDG_STATE_HOME = "${config.home.homeDirectory}/.local/state";
       QT_QPA_PLATFORM = "wayland";
+      DOTNET_ROOT = "${pkgs.dotnet-sdk_10}/share/dotnet";
     };
   };
 
