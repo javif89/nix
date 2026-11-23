@@ -11,6 +11,7 @@
     enable = true;
     package = pkgs.vscode; # or pkgs.vscodium for the open-source version
     mutableExtensionsDir = false;
+    profiles.default.mutableUserSettings = true;
 
     # Extensions
     profiles.default.extensions =
